@@ -23,23 +23,47 @@
         "id": "64a06e4d992eae97",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1180,
+        "x": 1160,
         "y": 120,
         "wires": [
             [
-                "1d88c0f5cd17e86e"
+                "b7edd705e6299cc2"
             ]
         ]
     },
     {
-        "id": "1d88c0f5cd17e86e",
+        "id": "2a40f09a09e9863f",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1340,
-        "y": 300,
+        "x": 1160,
+        "y": 140,
         "wires": [
             [
-                "38aad7de0f52ca73"
+                "9d087983f318aca6"
+            ]
+        ]
+    },
+    {
+        "id": "1bb798c6dc1072b1",
+        "type": "junction",
+        "z": "9ffaf4a50f363f22",
+        "x": 1300,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b554fb5f150a3f4",
+        "type": "junction",
+        "z": "9ffaf4a50f363f22",
+        "x": 1860,
+        "y": 160,
+        "wires": [
+            [
+                "1307d393f4edacea",
+                "ca4a200023daf268",
+                "eef01edb1bef9cc7"
             ]
         ]
     },
@@ -243,7 +267,9 @@
         "x": 130,
         "y": 380,
         "wires": [
-            []
+            [
+                "f9f5222d3307d3a2"
+            ]
         ]
     },
     {
@@ -378,8 +404,8 @@
         "type": "function",
         "z": "9ffaf4a50f363f22",
         "name": "spectrumRGB -> hex string",
-        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\n\nlet colorString = colorInt.toString(16);\n\nmsg.payload = colorString;\n\nreturn msg;\n\n\n// try{\n//     msg.payload.params.color.spectrumRGB\n// }\n\n\n// num.toString(16)\n\n\n",
-        "outputs": 1,
+        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\nlet colorString = colorInt.toString(16);\nlet newMsg = {};\n\nmsg.payload = colorString;\nnewMsg.color = colorInt;\n\n\nreturn [msg, newMsg];\n\n\n// try{\n//     msg.payload.params.color.spectrumRGB\n// }\n\n\n// num.toString(16)\n\n\n",
+        "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
@@ -391,9 +417,18 @@
             [
                 "732597945aedf1d6",
                 "ba1106a4146039b5",
-                "ca541719d9b3ad9e",
-                "662f10bec4a9e318"
+                "ca541719d9b3ad9e"
+            ],
+            [
+                "2f3634a5c980132c"
             ]
+        ],
+        "inputLabels": [
+            "spectrumRgb"
+        ],
+        "outputLabels": [
+            "hexString",
+            "spectrumRgb"
         ]
     },
     {
@@ -511,7 +546,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "brightness",
                 "pt": "msg",
                 "to": "msg.payload.params.brightness",
                 "tot": "msg"
@@ -526,34 +561,7 @@
         "y": 140,
         "wires": [
             [
-                "64a06e4d992eae97"
-            ]
-        ]
-    },
-    {
-        "id": "662f10bec4a9e318",
-        "type": "change",
-        "z": "9ffaf4a50f363f22",
-        "name": "prepare msg.payload with color",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "msg.payload.params.brightness",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1110,
-        "y": 260,
-        "wires": [
-            [
-                "1d88c0f5cd17e86e"
+                "2a40f09a09e9863f"
             ]
         ]
     },
@@ -567,7 +575,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "msg.payload.params.brightness",
+                "to": "msg.payload.params.color.temperature",
                 "tot": "msg"
             }
         ],
@@ -577,10 +585,10 @@
         "to": "",
         "reg": false,
         "x": 850,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
-                "1d88c0f5cd17e86e"
+                "1bb798c6dc1072b1"
             ]
         ]
     },
@@ -588,11 +596,11 @@
         "id": "18e4d12257d68266",
         "type": "http request",
         "z": "9ffaf4a50f363f22",
-        "name": "Send request to WLED",
+        "name": "Send onOff request to WLED",
         "method": "GET",
         "ret": "txt",
-        "paytoqs": "query",
-        "url": "http://192.168.1.33",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.33/win&T={{on}}",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -600,11 +608,11 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1100,
-        "y": 420,
+        "x": 1660,
+        "y": 120,
         "wires": [
             [
-                "ca4a200023daf268"
+                "4b554fb5f150a3f4"
             ]
         ]
     },
@@ -614,25 +622,25 @@
         "z": "9ffaf4a50f363f22",
         "name": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
         "info": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
-        "x": 600,
-        "y": 660,
+        "x": 1860,
+        "y": 60,
         "wires": []
     },
     {
         "id": "ca4a200023daf268",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "Wled answered:",
+        "name": "statusCode",
         "active": true,
         "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
+        "console": true,
+        "tostatus": true,
+        "complete": "statusCode",
         "targetType": "msg",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
-        "x": 1300,
-        "y": 520,
+        "x": 2000,
+        "y": 160,
         "wires": []
     },
     {
@@ -643,7 +651,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "on",
                 "pt": "msg",
                 "to": "msg.payload.params.on",
                 "tot": "msg"
@@ -668,25 +676,205 @@
         "z": "9ffaf4a50f363f22",
         "name": "Parse home commands: onState, brightness, color, temperature to commands understandable by WLED",
         "info": "",
-        "x": 590,
-        "y": 40,
+        "x": 650,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "38aad7de0f52ca73",
+        "id": "f37ee142b91dc690",
+        "type": "inject",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "props": [
+            {
+                "p": "on",
+                "v": "3",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1510,
+        "y": 40,
+        "wires": [
+            [
+                "18e4d12257d68266"
+            ]
+        ]
+    },
+    {
+        "id": "eef01edb1bef9cc7",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "status",
+        "format": "{{msg.status}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1970,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1307d393f4edacea",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "Final",
+        "name": "url",
         "active": true,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "responseUrl",
+        "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1460,
+        "x": 1970,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b7edd705e6299cc2",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "true/false to \"0\" \"1\"",
+        "func": "let bool = msg.on;\nlet newMsg = {};\n\nif(bool == true){\n    bool = \"1\";\n} else {\n    bool = \"0\";\n}\n\nnewMsg.on = bool;\nreturn newMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 120,
+        "wires": [
+            [
+                "18e4d12257d68266"
+            ]
+        ]
+    },
+    {
+        "id": "6f0de4d8750d3505",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "Send brightness request to WLED",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.33/win&A={{brightness}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1680,
+        "y": 160,
+        "wires": [
+            [
+                "4b554fb5f150a3f4"
+            ]
+        ]
+    },
+    {
+        "id": "9d087983f318aca6",
+        "type": "range",
+        "z": "9ffaf4a50f363f22",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "255",
+        "action": "scale",
+        "round": true,
+        "property": "brightness",
+        "name": "brightness 0-100 to 0-255",
+        "x": 1350,
+        "y": 160,
+        "wires": [
+            [
+                "6f0de4d8750d3505"
+            ]
+        ]
+    },
+    {
+        "id": "2f3634a5c980132c",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "Send color request to WLED",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.33/win&CL={{color}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1660,
+        "y": 200,
+        "wires": [
+            [
+                "4b554fb5f150a3f4"
+            ]
+        ]
+    },
+    {
+        "id": "55362e62e43443fb",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "spectrumRGB can go straight to wled",
+        "info": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
+        "x": 850,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "d1c948cf0d02d8d2",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f9f5222d3307d3a2",
+        "type": "template",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
+        "output": "str",
+        "x": 280,
+        "y": 380,
+        "wires": [
+            [
+                "d1c948cf0d02d8d2"
+            ]
+        ]
     }
 ]
