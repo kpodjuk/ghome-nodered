@@ -15,19 +15,22 @@
         "y": 220,
         "wires": [
             [
-                "bbedd69c8c297a0b"
+                "399e830f6527be55"
             ]
         ]
     },
     {
-        "id": "64a06e4d992eae97",
+        "id": "4b554fb5f150a3f4",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1160,
-        "y": 120,
+        "x": 2280,
+        "y": 180,
         "wires": [
             [
-                "b7edd705e6299cc2"
+                "ca4a200023daf268",
+                "eef01edb1bef9cc7",
+                "0f63dcc1c16649e4",
+                "2ceac86c9de3924d"
             ]
         ]
     },
@@ -35,8 +38,8 @@
         "id": "2a40f09a09e9863f",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1160,
-        "y": 140,
+        "x": 1520,
+        "y": 160,
         "wires": [
             [
                 "9d087983f318aca6"
@@ -44,26 +47,26 @@
         ]
     },
     {
-        "id": "1bb798c6dc1072b1",
+        "id": "64a06e4d992eae97",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1300,
-        "y": 340,
+        "x": 1520,
+        "y": 140,
         "wires": [
-            []
+            [
+                "b7edd705e6299cc2"
+            ]
         ]
     },
     {
-        "id": "4b554fb5f150a3f4",
+        "id": "b3c5cda6a292e8b0",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1860,
-        "y": 160,
+        "x": 640,
+        "y": 240,
         "wires": [
             [
-                "1307d393f4edacea",
-                "ca4a200023daf268",
-                "eef01edb1bef9cc7"
+                "bbedd69c8c297a0b"
             ]
         ]
     },
@@ -250,7 +253,7 @@
         "name": "pc",
         "topic": "",
         "x": 130,
-        "y": 480,
+        "y": 740,
         "wires": [
             []
         ]
@@ -265,11 +268,231 @@
         "name": "scene",
         "topic": "",
         "x": 130,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "f9f5222d3307d3a2"
             ]
+        ]
+    },
+    {
+        "id": "d1c948cf0d02d8d2",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f9f5222d3307d3a2",
+        "type": "template",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
+        "output": "str",
+        "x": 280,
+        "y": 640,
+        "wires": [
+            [
+                "d1c948cf0d02d8d2"
+            ]
+        ]
+    },
+    {
+        "id": "399e830f6527be55",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "msg.name",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wled-desk",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-down",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-master",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "1b09234adde36173"
+            ],
+            [
+                "8eba3691d133eb03"
+            ],
+            [
+                "8136788f3ace0ce5"
+            ],
+            [
+                "13dbd3259afb9ef1"
+            ]
+        ]
+    },
+    {
+        "id": "1b09234adde36173",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled desk",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.33",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
+            ]
+        ]
+    },
+    {
+        "id": "8eba3691d133eb03",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled shelf-up",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.59",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
+            ]
+        ]
+    },
+    {
+        "id": "8136788f3ace0ce5",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled shelf-down",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.42",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
+            ]
+        ]
+    },
+    {
+        "id": "13dbd3259afb9ef1",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled master",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.41",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 260,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
+            ]
+        ]
+    },
+    {
+        "id": "299469e329e72509",
+        "type": "inject",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 760,
+        "wires": [
+            []
         ]
     },
     {
@@ -289,8 +512,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 530,
-        "y": 200,
+        "x": 950,
+        "y": 220,
         "wires": []
     },
     {
@@ -310,8 +533,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 530,
-        "y": 220,
+        "x": 950,
+        "y": 240,
         "wires": []
     },
     {
@@ -331,8 +554,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 770,
-        "y": 220,
+        "x": 1190,
+        "y": 240,
         "wires": []
     },
     {
@@ -352,8 +575,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 780,
-        "y": 200,
+        "x": 1200,
+        "y": 220,
         "wires": []
     },
     {
@@ -383,8 +606,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 340,
-        "y": 220,
+        "x": 760,
+        "y": 240,
         "wires": [
             [
                 "6946712f49f33e80",
@@ -404,15 +627,15 @@
         "type": "function",
         "z": "9ffaf4a50f363f22",
         "name": "spectrumRGB -> hex string",
-        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\nlet colorString = colorInt.toString(16);\nlet newMsg = {};\n\nmsg.payload = colorString;\nnewMsg.color = colorInt;\n\n\nreturn [msg, newMsg];\n\n\n// try{\n//     msg.payload.params.color.spectrumRGB\n// }\n\n\n// num.toString(16)\n\n\n",
+        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\nlet colorString = colorInt.toString(16);\nlet newMsg = {};\n\nnewMsg.payload = colorString; // \nmsg.color = colorInt; // used by WLED\n\n// msg - goes to WLED\nreturn [newMsg, msg];\n\n\n\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 260,
+        "x": 1240,
+        "y": 280,
         "wires": [
             [
                 "732597945aedf1d6",
@@ -453,8 +676,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 540,
-        "y": 260,
+        "x": 960,
+        "y": 280,
         "wires": [
             [
                 "97bda075be31518a",
@@ -483,8 +706,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1040,
-        "y": 180,
+        "x": 1460,
+        "y": 200,
         "wires": []
     },
     {
@@ -511,8 +734,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 1050,
-        "y": 200,
+        "x": 1470,
+        "y": 220,
         "wires": [
             []
         ]
@@ -534,8 +757,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1040,
-        "y": 220,
+        "x": 1460,
+        "y": 240,
         "wires": []
     },
     {
@@ -557,8 +780,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 140,
+        "x": 1070,
+        "y": 160,
         "wires": [
             [
                 "2a40f09a09e9863f"
@@ -584,11 +807,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 340,
+        "x": 1270,
+        "y": 320,
         "wires": [
             [
-                "1bb798c6dc1072b1"
+                "f47e33a4110d132b"
             ]
         ]
     },
@@ -600,7 +823,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://192.168.1.33/win&T={{on}}",
+        "url": "http://{{requestAddress}}/win&T={{on}}",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -608,8 +831,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1660,
-        "y": 120,
+        "x": 2080,
+        "y": 140,
         "wires": [
             [
                 "4b554fb5f150a3f4"
@@ -622,16 +845,16 @@
         "z": "9ffaf4a50f363f22",
         "name": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
         "info": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
-        "x": 1860,
-        "y": 60,
+        "x": 2160,
+        "y": 80,
         "wires": []
     },
     {
         "id": "ca4a200023daf268",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "statusCode",
-        "active": true,
+        "name": "statusCode from wled request",
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -639,8 +862,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 2000,
-        "y": 160,
+        "x": 2470,
+        "y": 180,
         "wires": []
     },
     {
@@ -662,8 +885,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 120,
+        "x": 1070,
+        "y": 140,
         "wires": [
             [
                 "64a06e4d992eae97"
@@ -676,34 +899,9 @@
         "z": "9ffaf4a50f363f22",
         "name": "Parse home commands: onState, brightness, color, temperature to commands understandable by WLED",
         "info": "",
-        "x": 650,
-        "y": 60,
+        "x": 1070,
+        "y": 80,
         "wires": []
-    },
-    {
-        "id": "f37ee142b91dc690",
-        "type": "inject",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "props": [
-            {
-                "p": "on",
-                "v": "3",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 1510,
-        "y": 40,
-        "wires": [
-            [
-                "18e4d12257d68266"
-            ]
-        ]
     },
     {
         "id": "eef01edb1bef9cc7",
@@ -722,25 +920,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1970,
+        "x": 2390,
         "y": 120,
-        "wires": []
-    },
-    {
-        "id": "1307d393f4edacea",
-        "type": "debug",
-        "z": "9ffaf4a50f363f22",
-        "name": "url",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "responseUrl",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1970,
-        "y": 200,
         "wires": []
     },
     {
@@ -748,15 +929,15 @@
         "type": "function",
         "z": "9ffaf4a50f363f22",
         "name": "true/false to \"0\" \"1\"",
-        "func": "let bool = msg.on;\nlet newMsg = {};\n\nif(bool == true){\n    bool = \"1\";\n} else {\n    bool = \"0\";\n}\n\nnewMsg.on = bool;\nreturn newMsg;",
+        "func": "let bool = msg.on;\n\n\nif(bool == true){\n    bool = \"1\";\n} else {\n    bool = \"0\";\n}\n\nmsg.on = bool;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1330,
-        "y": 120,
+        "x": 1650,
+        "y": 140,
         "wires": [
             [
                 "18e4d12257d68266"
@@ -771,7 +952,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://192.168.1.33/win&A={{brightness}}",
+        "url": "http://{{requestAddress}}/win&A={{brightness}}",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -779,8 +960,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1680,
-        "y": 160,
+        "x": 2100,
+        "y": 180,
         "wires": [
             [
                 "4b554fb5f150a3f4"
@@ -799,8 +980,8 @@
         "round": true,
         "property": "brightness",
         "name": "brightness 0-100 to 0-255",
-        "x": 1350,
-        "y": 160,
+        "x": 1670,
+        "y": 180,
         "wires": [
             [
                 "6f0de4d8750d3505"
@@ -815,6 +996,49 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
+        "url": "http://{{requestAddress}}/win&CL={{color}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2080,
+        "y": 220,
+        "wires": [
+            [
+                "4b554fb5f150a3f4"
+            ]
+        ]
+    },
+    {
+        "id": "0f63dcc1c16649e4",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "d": true,
+        "name": "whole msg",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2410,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f47e33a4110d132b",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "d": true,
+        "name": "Send temperature [not implemented]",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
         "url": "http://192.168.1.33/win&CL={{color}}",
         "tls": "",
         "persist": false,
@@ -823,58 +1047,38 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1660,
-        "y": 200,
+        "x": 1610,
+        "y": 320,
         "wires": [
-            [
-                "4b554fb5f150a3f4"
-            ]
+            []
         ]
     },
     {
-        "id": "55362e62e43443fb",
+        "id": "e36a1d7188cf1b50",
         "type": "comment",
         "z": "9ffaf4a50f363f22",
-        "name": "spectrumRGB can go straight to wled",
-        "info": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
-        "x": 850,
-        "y": 300,
+        "name": "device name -> wled address",
+        "info": "http://192.168.1.41/ master\nhttp://192.168.1.42/ shelf-down\nhttp://192.168.1.33/ desk\nhttp://192.168.1.59/ shlf up",
+        "x": 420,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "d1c948cf0d02d8d2",
+        "id": "2ceac86c9de3924d",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "debug 1",
+        "d": true,
+        "name": "url after request",
         "active": true,
         "tosidebar": true,
         "console": true,
-        "tostatus": false,
-        "complete": "payload",
+        "tostatus": true,
+        "complete": "url",
         "targetType": "msg",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
-        "x": 470,
-        "y": 380,
+        "x": 2430,
+        "y": 220,
         "wires": []
-    },
-    {
-        "id": "f9f5222d3307d3a2",
-        "type": "template",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
-        "output": "str",
-        "x": 280,
-        "y": 380,
-        "wires": [
-            [
-                "d1c948cf0d02d8d2"
-            ]
-        ]
     }
 ]
