@@ -599,7 +599,7 @@
                 "ca541719d9b3ad9e"
             ],
             [
-                "2f3634a5c980132c"
+                "f515a6706e07e594"
             ]
         ],
         "inputLabels": [
@@ -1234,8 +1234,8 @@
         "name": "Send color request to WLED via json",
         "method": "POST",
         "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://{{requestAddress}}/json",
+        "paytoqs": "body",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1243,7 +1243,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 2410,
+        "x": 2490,
         "y": 400,
         "wires": [
             [
@@ -1252,17 +1252,59 @@
         ]
     },
     {
-        "id": "71252b100f115398",
-        "type": "template",
+        "id": "cd75ec966815c4c1",
+        "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "set msg.payload(json) to desired wled state ",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\n    \"state\": {\n        \"on\": {{on}}\n        \"seg\": [\n            {\n        \"col\": [\n          [255, 0, 0],\n          [255, 0, 0],\n          [255, 0, 0]\n        ]\n            }\n        ]\n    }\n}\n\n",
-        "output": "str",
-        "x": 2010,
+        "name": "sent",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2390,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "af186cbab8914e77",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "rcv",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "51da9d9ef4872525",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "http://192.168.1.41/json/",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2210,
         "y": 400,
         "wires": [
             [
@@ -1272,37 +1314,57 @@
         ]
     },
     {
-        "id": "cd75ec966815c4c1",
-        "type": "debug",
+        "id": "68ccd0c019426fda",
+        "type": "catch",
         "z": "9ffaf4a50f363f22",
-        "name": "whole msg",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 2350,
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 2240,
         "y": 480,
-        "wires": []
+        "wires": [
+            [
+                "cd75ec966815c4c1"
+            ]
+        ]
     },
     {
-        "id": "af186cbab8914e77",
-        "type": "debug",
+        "id": "799cfde25e88915e",
+        "type": "template",
         "z": "9ffaf4a50f363f22",
-        "name": "whole msg",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 2730,
-        "y": 440,
-        "wires": []
+        "name": "prepare payload with json",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    },\n    \"transition\": 7,\n    \"v\": true,\n    \"time\": 1703110435\n}",
+        "output": "str",
+        "x": 1930,
+        "y": 400,
+        "wires": [
+            [
+                "51da9d9ef4872525"
+            ]
+        ]
+    },
+    {
+        "id": "f515a6706e07e594",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "colorHex -> colorArray",
+        "func": "let colorInt = msg.color;\n\nnode.warn(\"colorInt=\"+colorInt);\n// node.warn(colorInt);\n\n// Parse the hex string into three separate values for red, green, and blue\nlet r = (colorInt >> 16) & 255;\nlet g = (colorInt >> 8) & 255;\nlet b = colorInt & 255;\n\n// save RGB values as an array\nmsg.colorArray = [r, g, b];\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 400,
+        "wires": [
+            [
+                "799cfde25e88915e"
+            ]
+        ]
     }
 ]
