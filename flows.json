@@ -255,7 +255,9 @@
         "x": 130,
         "y": 740,
         "wires": [
-            []
+            [
+                "1a239aca8279508e"
+            ]
         ]
     },
     {
@@ -268,29 +270,12 @@
         "name": "scene",
         "topic": "",
         "x": 130,
-        "y": 640,
+        "y": 500,
         "wires": [
             [
                 "f9f5222d3307d3a2"
             ]
         ]
-    },
-    {
-        "id": "d1c948cf0d02d8d2",
-        "type": "debug",
-        "z": "9ffaf4a50f363f22",
-        "name": "debug 1",
-        "active": false,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 470,
-        "y": 640,
-        "wires": []
     },
     {
         "id": "f9f5222d3307d3a2",
@@ -304,11 +289,9 @@
         "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
         "output": "str",
         "x": 280,
-        "y": 640,
+        "y": 500,
         "wires": [
-            [
-                "d1c948cf0d02d8d2"
-            ]
+            []
         ]
     },
     {
@@ -336,7 +319,7 @@
             },
             {
                 "t": "eq",
-                "v": "wled-master",
+                "v": "wled-ir",
                 "vt": "str"
             }
         ],
@@ -466,33 +449,6 @@
             [
                 "b3c5cda6a292e8b0"
             ]
-        ]
-    },
-    {
-        "id": "299469e329e72509",
-        "type": "inject",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 380,
-        "y": 760,
-        "wires": [
-            []
         ]
     },
     {
@@ -1016,7 +972,6 @@
         "id": "0f63dcc1c16649e4",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "d": true,
         "name": "whole msg",
         "active": false,
         "tosidebar": true,
@@ -1067,18 +1022,287 @@
         "id": "2ceac86c9de3924d",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "d": true,
         "name": "url after request",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
-        "complete": "url",
+        "complete": "responseUrl",
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
         "x": 2430,
         "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1a239aca8279508e",
+        "type": "template",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "field": "state",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.params.on}}",
+        "output": "str",
+        "x": 260,
+        "y": 740,
+        "wires": [
+            [
+                "91ee46c6c6984204"
+            ]
+        ]
+    },
+    {
+        "id": "2e596abc3ea67cf3",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.77/api?p={{state}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 740,
+        "wires": [
+            [
+                "1c41eecd124da8f5",
+                "33fa10f2dae4b382"
+            ]
+        ]
+    },
+    {
+        "id": "ec34f3a72def4509",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "http://192.168.1.77/api?p=off",
+        "info": "http://192.168.1.77/api?p=off",
+        "x": 420,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "1c41eecd124da8f5",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "status",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "statusCode",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "33fa10f2dae4b382",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "responseUrlstring",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "responseUrl",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "d52d52552741aa27",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "msg.state=off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "state",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 760,
+        "wires": [
+            [
+                "2e596abc3ea67cf3"
+            ]
+        ]
+    },
+    {
+        "id": "91ee46c6c6984204",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "msg.state?",
+        "property": "state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 740,
+        "wires": [
+            [
+                "819b87fa28bba4c5"
+            ],
+            [
+                "d52d52552741aa27"
+            ]
+        ]
+    },
+    {
+        "id": "819b87fa28bba4c5",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "msg.state=on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "state",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 720,
+        "wires": [
+            [
+                "2e596abc3ea67cf3"
+            ]
+        ]
+    },
+    {
+        "id": "8ac12cb22d3b3ee3",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32817",
+        "acknowledge": true,
+        "name": "wled-ir",
+        "topic": "",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "aff886ab813a3c94",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "Send color request to WLED via json",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://{{requestAddress}}/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2410,
+        "y": 400,
+        "wires": [
+            [
+                "af186cbab8914e77"
+            ]
+        ]
+    },
+    {
+        "id": "71252b100f115398",
+        "type": "template",
+        "z": "9ffaf4a50f363f22",
+        "name": "set msg.payload(json) to desired wled state ",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"state\": {\n        \"on\": {{on}}\n        \"seg\": [\n            {\n        \"col\": [\n          [255, 0, 0],\n          [255, 0, 0],\n          [255, 0, 0]\n        ]\n            }\n        ]\n    }\n}\n\n",
+        "output": "str",
+        "x": 2010,
+        "y": 400,
+        "wires": [
+            [
+                "aff886ab813a3c94",
+                "cd75ec966815c4c1"
+            ]
+        ]
+    },
+    {
+        "id": "cd75ec966815c4c1",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "whole msg",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2350,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "af186cbab8914e77",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "whole msg",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2730,
+        "y": 440,
         "wires": []
     }
 ]
