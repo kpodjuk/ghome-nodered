@@ -428,7 +428,7 @@
         "id": "13dbd3259afb9ef1",
         "type": "change",
         "z": "9ffaf4a50f363f22",
-        "name": "wled master",
+        "name": "wled-ir",
         "rules": [
             {
                 "t": "set",
@@ -443,11 +443,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 260,
+        "x": 490,
+        "y": 420,
         "wires": [
             [
-                "b3c5cda6a292e8b0"
+                "075159bfbe7990f4"
             ]
         ]
     },
@@ -599,7 +599,7 @@
                 "ca541719d9b3ad9e"
             ],
             [
-                "f515a6706e07e594"
+                "2f3634a5c980132c"
             ]
         ],
         "inputLabels": [
@@ -1070,7 +1070,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 850,
+        "x": 790,
         "y": 740,
         "wires": [
             [
@@ -1223,7 +1223,7 @@
         "y": 340,
         "wires": [
             [
-                "f6b62a21c7ac773f"
+                "399e830f6527be55"
             ]
         ]
     },
@@ -1243,19 +1243,17 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 2490,
-        "y": 400,
+        "x": 1490,
+        "y": 460,
         "wires": [
-            [
-                "af186cbab8914e77"
-            ]
+            []
         ]
     },
     {
         "id": "cd75ec966815c4c1",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
-        "name": "sent",
+        "name": "Catch everything else",
         "active": true,
         "tosidebar": true,
         "console": true,
@@ -1264,25 +1262,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 2390,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "af186cbab8914e77",
-        "type": "debug",
-        "z": "9ffaf4a50f363f22",
-        "name": "rcv",
-        "active": false,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 2610,
-        "y": 480,
+        "x": 330,
+        "y": 640,
         "wires": []
     },
     {
@@ -1304,12 +1285,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2210,
-        "y": 400,
+        "x": 1250,
+        "y": 460,
         "wires": [
             [
-                "aff886ab813a3c94",
-                "cd75ec966815c4c1"
+                "aff886ab813a3c94"
             ]
         ]
     },
@@ -1320,8 +1300,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 2240,
-        "y": 480,
+        "x": 140,
+        "y": 640,
         "wires": [
             [
                 "cd75ec966815c4c1"
@@ -1332,15 +1312,15 @@
         "id": "799cfde25e88915e",
         "type": "template",
         "z": "9ffaf4a50f363f22",
-        "name": "prepare payload with json",
+        "name": "payload: wled color",
         "field": "payload",
         "fieldType": "msg",
         "format": "json",
         "syntax": "mustache",
-        "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    },\n    \"transition\": 7,\n    \"v\": true,\n    \"time\": 1703110435\n}",
+        "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    }\n}",
         "output": "str",
-        "x": 1930,
-        "y": 400,
+        "x": 1070,
+        "y": 460,
         "wires": [
             [
                 "51da9d9ef4872525"
@@ -1351,20 +1331,121 @@
         "id": "f515a6706e07e594",
         "type": "function",
         "z": "9ffaf4a50f363f22",
-        "name": "colorHex -> colorArray",
-        "func": "let colorInt = msg.color;\n\nnode.warn(\"colorInt=\"+colorInt);\n// node.warn(colorInt);\n\n// Parse the hex string into three separate values for red, green, and blue\nlet r = (colorInt >> 16) & 255;\nlet g = (colorInt >> 8) & 255;\nlet b = colorInt & 255;\n\n// save RGB values as an array\nmsg.colorArray = [r, g, b];\n\n\n\nreturn msg;",
+        "name": "spectrumRGB -> [r,g,b]",
+        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\n\n// node.warn(\"colorInt=\"+colorInt);\n// node.warn(colorInt);\n\n// Parse the hex string into three separate values for red, green, and blue\nlet r = (colorInt >> 16) & 255;\nlet g = (colorInt >> 8) & 255;\nlet b = colorInt & 255;\n\n// save RGB values as an array\nmsg.colorArray = [r, g, b];\n\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1600,
-        "y": 400,
+        "x": 850,
+        "y": 460,
         "wires": [
             [
                 "799cfde25e88915e"
             ]
         ]
+    },
+    {
+        "id": "075159bfbe7990f4",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "payload.params",
+        "property": "payload.params",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "brightness",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "color",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 640,
+        "y": 420,
+        "wires": [
+            [
+                "89be4982171e0fe5"
+            ],
+            [],
+            [
+                "f515a6706e07e594"
+            ]
+        ]
+    },
+    {
+        "id": "0f968ab3cb548317",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "ir brightness todo",
+        "info": "",
+        "x": 820,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8de734d93914b78d",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1140,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89be4982171e0fe5",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "prepare msg.url and msg.payload",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\nlet statusFromGHome = msg.payload.params.on; // assigning to variable\n\n// if I wanted to put value from msg straight into payload you would do this: \n// msg.payload = `{\"bulbCommand\": ${msg.payload.params.on}}`\n\n// translate ghome command to irBulb command, \"03\" = off, \"04\" - on\n// constant payloads in this case so surrounded by ' not ` \nif(statusFromGHome){\n    msg.payload = '{\"bulbCommand\": \"04\"}'\n} else {\n    msg.payload = '{\"bulbCommand\": \"03\"}'\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "8de734d93914b78d"
+            ]
+        ]
+    },
+    {
+        "id": "6687676799b04fb4",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "DO JSON REQUESTS LIKE THIS:",
+        "info": "",
+        "x": 880,
+        "y": 360,
+        "wires": []
     }
 ]
