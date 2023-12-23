@@ -12,7 +12,7 @@
         "type": "junction",
         "z": "9ffaf4a50f363f22",
         "x": 240,
-        "y": 220,
+        "y": 280,
         "wires": [
             [
                 "399e830f6527be55"
@@ -62,8 +62,8 @@
         "id": "b3c5cda6a292e8b0",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 640,
-        "y": 240,
+        "x": 760,
+        "y": 260,
         "wires": [
             [
                 "bbedd69c8c297a0b"
@@ -253,7 +253,7 @@
         "name": "pc",
         "topic": "",
         "x": 130,
-        "y": 740,
+        "y": 980,
         "wires": [
             [
                 "1a239aca8279508e"
@@ -267,10 +267,10 @@
         "conf": "caa4d98949c7e701",
         "device": "32649",
         "acknowledge": true,
-        "name": "scene",
+        "name": "ambient",
         "topic": "",
         "x": 130,
-        "y": 500,
+        "y": 1160,
         "wires": [
             [
                 "f9f5222d3307d3a2"
@@ -289,7 +289,7 @@
         "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
         "output": "str",
         "x": 280,
-        "y": 500,
+        "y": 1160,
         "wires": [
             []
         ]
@@ -321,13 +321,18 @@
                 "t": "eq",
                 "v": "wled-ir",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-short",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 4,
+        "outputs": 5,
         "x": 330,
-        "y": 220,
+        "y": 280,
         "wires": [
             [
                 "1b09234adde36173"
@@ -340,6 +345,9 @@
             ],
             [
                 "13dbd3259afb9ef1"
+            ],
+            [
+                "c2651d12f8bea324"
             ]
         ]
     },
@@ -362,8 +370,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 200,
+        "x": 540,
+        "y": 260,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -380,7 +388,7 @@
                 "t": "set",
                 "p": "requestAddress",
                 "pt": "msg",
-                "to": "192.168.1.59",
+                "to": "192.168.1.95",
                 "tot": "str"
             }
         ],
@@ -389,8 +397,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 220,
+        "x": 550,
+        "y": 280,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -416,8 +424,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 240,
+        "x": 560,
+        "y": 300,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -444,7 +452,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 420,
+        "y": 520,
         "wires": [
             [
                 "075159bfbe7990f4"
@@ -562,8 +570,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 760,
-        "y": 240,
+        "x": 740,
+        "y": 180,
         "wires": [
             [
                 "6946712f49f33e80",
@@ -767,7 +775,8 @@
         "y": 320,
         "wires": [
             [
-                "f47e33a4110d132b"
+                "b8ad6bdf752ee853",
+                "fa2620b2ae0da780"
             ]
         ]
     },
@@ -810,7 +819,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "statusCode from wled request",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -973,7 +982,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "whole msg",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -984,29 +993,6 @@
         "x": 2410,
         "y": 260,
         "wires": []
-    },
-    {
-        "id": "f47e33a4110d132b",
-        "type": "http request",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
-        "name": "Send temperature [not implemented]",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.1.33/win&CL={{color}}",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1610,
-        "y": 320,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "e36a1d7188cf1b50",
@@ -1047,7 +1033,7 @@
         "template": "{{payload.params.on}}",
         "output": "str",
         "x": 260,
-        "y": 740,
+        "y": 980,
         "wires": [
             [
                 "91ee46c6c6984204"
@@ -1071,7 +1057,7 @@
         "senderr": false,
         "headers": [],
         "x": 790,
-        "y": 740,
+        "y": 980,
         "wires": [
             [
                 "1c41eecd124da8f5",
@@ -1085,8 +1071,8 @@
         "z": "9ffaf4a50f363f22",
         "name": "http://192.168.1.77/api?p=off",
         "info": "http://192.168.1.77/api?p=off",
-        "x": 420,
-        "y": 960,
+        "x": 780,
+        "y": 920,
         "wires": []
     },
     {
@@ -1103,7 +1089,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1000,
-        "y": 720,
+        "y": 960,
         "wires": []
     },
     {
@@ -1120,7 +1106,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1040,
-        "y": 760,
+        "y": 1000,
         "wires": []
     },
     {
@@ -1143,7 +1129,7 @@
         "to": "",
         "reg": false,
         "x": 580,
-        "y": 760,
+        "y": 1000,
         "wires": [
             [
                 "2e596abc3ea67cf3"
@@ -1173,7 +1159,7 @@
         "repair": false,
         "outputs": 2,
         "x": 410,
-        "y": 740,
+        "y": 980,
         "wires": [
             [
                 "819b87fa28bba4c5"
@@ -1203,7 +1189,7 @@
         "to": "",
         "reg": false,
         "x": 580,
-        "y": 720,
+        "y": 960,
         "wires": [
             [
                 "2e596abc3ea67cf3"
@@ -1223,30 +1209,8 @@
         "y": 340,
         "wires": [
             [
-                "399e830f6527be55"
+                "f6b62a21c7ac773f"
             ]
-        ]
-    },
-    {
-        "id": "aff886ab813a3c94",
-        "type": "http request",
-        "z": "9ffaf4a50f363f22",
-        "name": "Send color request to WLED via json",
-        "method": "POST",
-        "ret": "txt",
-        "paytoqs": "body",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1490,
-        "y": 460,
-        "wires": [
-            []
         ]
     },
     {
@@ -1263,7 +1227,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 330,
-        "y": 640,
+        "y": 840,
         "wires": []
     },
     {
@@ -1286,10 +1250,10 @@
         "to": "",
         "reg": false,
         "x": 1250,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
-                "aff886ab813a3c94"
+                "37b89f5589a15127"
             ]
         ]
     },
@@ -1301,7 +1265,7 @@
         "scope": null,
         "uncaught": false,
         "x": 140,
-        "y": 640,
+        "y": 840,
         "wires": [
             [
                 "cd75ec966815c4c1"
@@ -1320,7 +1284,7 @@
         "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    }\n}",
         "output": "str",
         "x": 1070,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "51da9d9ef4872525"
@@ -1340,7 +1304,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "799cfde25e88915e"
@@ -1375,7 +1339,7 @@
         "repair": false,
         "outputs": 3,
         "x": 640,
-        "y": 420,
+        "y": 520,
         "wires": [
             [
                 "89be4982171e0fe5"
@@ -1393,7 +1357,7 @@
         "name": "ir brightness todo",
         "info": "",
         "x": 820,
-        "y": 420,
+        "y": 520,
         "wires": []
     },
     {
@@ -1413,7 +1377,7 @@
         "senderr": false,
         "headers": [],
         "x": 1140,
-        "y": 380,
+        "y": 480,
         "wires": [
             []
         ]
@@ -1431,7 +1395,7 @@
         "finalize": "",
         "libs": [],
         "x": 880,
-        "y": 380,
+        "y": 480,
         "wires": [
             [
                 "8de734d93914b78d"
@@ -1445,7 +1409,143 @@
         "name": "DO JSON REQUESTS LIKE THIS:",
         "info": "",
         "x": 880,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b8ad6bdf752ee853",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "temperature",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1540,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "fa2620b2ae0da780",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "prepare wled payload with temperature",
+        "func": "\nmsg.payload = \n`{\n    \"seg\" : \n        {\n            \"cct\": ${msg.payload}\n        }\n}`\n\nmsg.url = `${msg.requestAddress}/json/`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 320,
+        "wires": [
+            [
+                "feba120de6145e53"
+            ]
+        ]
+    },
+    {
+        "id": "feba120de6145e53",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "d": true,
+        "name": "Send POST to: msg.url, with body: msg.payload",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1980,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d48fb30c076abd42",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "This is almost fully working, problem is:",
+        "info": "\nit turns out actually in wled web interface they just modify segment color\nbased on value of brightness slider so you have to write function\nto do the same\nNo, \"cct\" doesn't work\n",
+        "x": 1950,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "37b89f5589a15127",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "Send POST to: msg.url, with body: msg.payload",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1520,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2651d12f8bea324",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled short",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.71",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
+            ]
+        ]
+    },
+    {
+        "id": "92eb1373e49f154d",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32842",
+        "acknowledge": true,
+        "name": "wled-short",
+        "topic": "",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
     }
 ]
