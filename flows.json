@@ -775,8 +775,7 @@
         "y": 320,
         "wires": [
             [
-                "b8ad6bdf752ee853",
-                "fa2620b2ae0da780"
+                "23e428179924a42c"
             ]
         ]
     },
@@ -982,7 +981,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "whole msg",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -1413,76 +1412,6 @@
         "wires": []
     },
     {
-        "id": "b8ad6bdf752ee853",
-        "type": "debug",
-        "z": "9ffaf4a50f363f22",
-        "name": "temperature",
-        "active": false,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1540,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "fa2620b2ae0da780",
-        "type": "function",
-        "z": "9ffaf4a50f363f22",
-        "name": "prepare wled payload with temperature",
-        "func": "\nmsg.payload = \n`{\n    \"seg\" : \n        {\n            \"cct\": ${msg.payload}\n        }\n}`\n\nmsg.url = `${msg.requestAddress}/json/`\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1610,
-        "y": 320,
-        "wires": [
-            [
-                "feba120de6145e53"
-            ]
-        ]
-    },
-    {
-        "id": "feba120de6145e53",
-        "type": "http request",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
-        "name": "Send POST to: msg.url, with body: msg.payload",
-        "method": "POST",
-        "ret": "txt",
-        "paytoqs": "body",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1980,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d48fb30c076abd42",
-        "type": "comment",
-        "z": "9ffaf4a50f363f22",
-        "name": "This is almost fully working, problem is:",
-        "info": "\nit turns out actually in wled web interface they just modify segment color\nbased on value of brightness slider so you have to write function\nto do the same\nNo, \"cct\" doesn't work\n",
-        "x": 1950,
-        "y": 360,
-        "wires": []
-    },
-    {
         "id": "37b89f5589a15127",
         "type": "http request",
         "z": "9ffaf4a50f363f22",
@@ -1545,6 +1474,26 @@
         "wires": [
             [
                 "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "23e428179924a42c",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "rgbToKelvin",
+        "func": "\n\nvar q = Math.log;\nvar Z = Math.floor;\nvar temperature = msg.payload;\nvar color = kelvinToRgb(temperature);\n\nvar colorInt = (color.r << 16) | (color.g << 8) | (color.b);\n\nmsg.color = colorInt;\n\nfunction kelvinToRgb(t){\n\n    var n,\n      i,\n      r,\n      e = t / 100;\n    return (\n      (r =\n        e < 66\n          ? ((n = 255),\n            (i =\n              -155.25485562709179 -\n              0.44596950469579133 * (i = e - 2) +\n              104.49216199393888 * q(i)),\n            e < 20\n              ? 0\n              : 0.8274096064007395 * (r = e - 10) -\n                254.76935184120902 +\n                115.67994401066147 * q(r))\n          : ((n =\n              351.97690566805693 +\n              0.114206453784165 * (n = e - 55) -\n              40.25366309332127 * q(n)),\n            (i =\n              325.4494125711974 +\n              0.07943456536662342 * (i = e - 50) -\n              28.0852963507957 * q(i)),\n            255)),\n      {\n        r: J(Z(n), 0, 255),\n        g: J(Z(i), 0, 255),\n        b: J(Z(r), 0, 255),\n      }\n    );\n}\n\nfunction J(t, n, i) {\n    return Math.min(Math.max(t, n), i)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1510,
+        "y": 320,
+        "wires": [
+            [
+                "2f3634a5c980132c"
             ]
         ]
     }
