@@ -8,6 +8,270 @@
         "env": []
     },
     {
+        "id": "686cdb22219e9c9f",
+        "type": "subflow",
+        "name": "bri down",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d395080dbb5f6af2"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "9a9e47dd9dcfdca1",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "27bb0e5cddfa934e",
+        "type": "subflow",
+        "name": "bri up",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "25be9e3f3a4b2601"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 520,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "47fa091b2f3c0bce",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "5d87c4a6c424c840",
+        "type": "subflow",
+        "name": "lowest bri",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "60d52c741ef4e05a"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 580,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4c3f4edc519b120a",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "52afd969a1cf0ffc",
+        "type": "subflow",
+        "name": "light yellow",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 20,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "7ffaf0c823f795c0"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 480,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "aefdd52834928122",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e51f69071017f997",
+        "type": "subflow",
+        "name": "white",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "35acb75cbfe9ce99"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 520,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "decfa4df4e118cf3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "f346ac36acd43e99",
+        "type": "subflow",
+        "name": "yellow",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "1482f685d47d3ecd"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 460,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "decf3f5bd0ca9971",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "eb65f773a621ccc4",
+        "type": "subflow",
+        "name": "orange",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "ec1e12f90c60d043"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "91a0ac592ca5a62a",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "cc494343ad5f7d2c",
+        "type": "subflow",
+        "name": "red",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "417b9d300a0420c4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 500,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "03eebd07d4d20ea8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "f6b62a21c7ac773f",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
@@ -193,6 +457,337 @@
         "className": ""
     },
     {
+        "id": "d395080dbb5f6af2",
+        "type": "function",
+        "z": "686cdb22219e9c9f",
+        "name": "brightness down",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\nmsg.payload = '{\"bulbCommand\": \"02\"}' // bri down\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "9a9e47dd9dcfdca1"
+            ]
+        ]
+    },
+    {
+        "id": "9a9e47dd9dcfdca1",
+        "type": "http request",
+        "z": "686cdb22219e9c9f",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25be9e3f3a4b2601",
+        "type": "function",
+        "z": "27bb0e5cddfa934e",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"01\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "47fa091b2f3c0bce"
+            ]
+        ]
+    },
+    {
+        "id": "47fa091b2f3c0bce",
+        "type": "http request",
+        "z": "27bb0e5cddfa934e",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 380,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60d52c741ef4e05a",
+        "type": "subflow:686cdb22219e9c9f",
+        "z": "5d87c4a6c424c840",
+        "name": "",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "64c61f6a20e89bf4"
+            ]
+        ]
+    },
+    {
+        "id": "64c61f6a20e89bf4",
+        "type": "subflow:686cdb22219e9c9f",
+        "z": "5d87c4a6c424c840",
+        "name": "",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "4c3f4edc519b120a"
+            ]
+        ]
+    },
+    {
+        "id": "4c3f4edc519b120a",
+        "type": "subflow:686cdb22219e9c9f",
+        "z": "5d87c4a6c424c840",
+        "name": "",
+        "x": 480,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ffaf0c823f795c0",
+        "type": "function",
+        "z": "52afd969a1cf0ffc",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"21\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 40,
+        "wires": [
+            [
+                "aefdd52834928122"
+            ]
+        ]
+    },
+    {
+        "id": "aefdd52834928122",
+        "type": "http request",
+        "z": "52afd969a1cf0ffc",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 340,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35acb75cbfe9ce99",
+        "type": "function",
+        "z": "e51f69071017f997",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"08\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "decfa4df4e118cf3"
+            ]
+        ]
+    },
+    {
+        "id": "decfa4df4e118cf3",
+        "type": "http request",
+        "z": "e51f69071017f997",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 380,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1482f685d47d3ecd",
+        "type": "function",
+        "z": "f346ac36acd43e99",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"17\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "decf3f5bd0ca9971"
+            ]
+        ]
+    },
+    {
+        "id": "decf3f5bd0ca9971",
+        "type": "http request",
+        "z": "f346ac36acd43e99",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 320,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec1e12f90c60d043",
+        "type": "function",
+        "z": "eb65f773a621ccc4",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"09\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 80,
+        "wires": [
+            [
+                "91a0ac592ca5a62a"
+            ]
+        ]
+    },
+    {
+        "id": "91a0ac592ca5a62a",
+        "type": "http request",
+        "z": "eb65f773a621ccc4",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "417b9d300a0420c4",
+        "type": "function",
+        "z": "cc494343ad5f7d2c",
+        "name": "brightness up",
+        "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\n\nmsg.payload = '{\"bulbCommand\": \"05\"}' // bri up\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "03eebd07d4d20ea8"
+            ]
+        ]
+    },
+    {
+        "id": "03eebd07d4d20ea8",
+        "type": "http request",
+        "z": "cc494343ad5f7d2c",
+        "name": "Send bulbCommand",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 340,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "4eea07dacc3cc504",
         "type": "google-home",
         "z": "9ffaf4a50f363f22",
@@ -270,7 +865,7 @@
         "name": "ambient",
         "topic": "",
         "x": 130,
-        "y": 1160,
+        "y": 1340,
         "wires": [
             [
                 "f9f5222d3307d3a2"
@@ -289,7 +884,7 @@
         "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
         "output": "str",
         "x": 280,
-        "y": 1160,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -818,7 +1413,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "statusCode from wled request",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -1071,7 +1666,7 @@
         "name": "http://192.168.1.77/api?p=off",
         "info": "http://192.168.1.77/api?p=off",
         "x": 780,
-        "y": 920,
+        "y": 900,
         "wires": []
     },
     {
@@ -1248,11 +1843,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1250,
-        "y": 560,
+        "x": 1430,
+        "y": 620,
         "wires": [
             [
-                "37b89f5589a15127"
+                "8af80de7fa52e249"
             ]
         ]
     },
@@ -1282,8 +1877,8 @@
         "syntax": "mustache",
         "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    }\n}",
         "output": "str",
-        "x": 1070,
-        "y": 560,
+        "x": 1250,
+        "y": 620,
         "wires": [
             [
                 "51da9d9ef4872525"
@@ -1294,16 +1889,16 @@
         "id": "f515a6706e07e594",
         "type": "function",
         "z": "9ffaf4a50f363f22",
-        "name": "spectrumRGB -> [r,g,b]",
-        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\n\n// node.warn(\"colorInt=\"+colorInt);\n// node.warn(colorInt);\n\n// Parse the hex string into three separate values for red, green, and blue\nlet r = (colorInt >> 16) & 255;\nlet g = (colorInt >> 8) & 255;\nlet b = colorInt & 255;\n\n// save RGB values as an array\nmsg.colorArray = [r, g, b];\n\n\n\nreturn msg;",
+        "name": "color",
+        "func": "let colorInt = msg.payload.params.color.spectrumRGB;\n\n// node.warn(\"colorInt=\"+colorInt);\n// node.warn(colorInt);\n\n// Parse the hex string into three separate values for red, green, and blue\nlet r = (colorInt >> 16) & 255;\nlet g = (colorInt >> 8) & 255;\nlet b = colorInt & 255;\n\n\n// save RGB values as an array\nmsg.colorArray = [r, g, b];\n\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 560,
+        "x": 1090,
+        "y": 620,
         "wires": [
             [
                 "799cfde25e88915e"
@@ -1343,27 +1938,19 @@
             [
                 "89be4982171e0fe5"
             ],
-            [],
             [
-                "f515a6706e07e594"
+                "a29b55984f332de5"
+            ],
+            [
+                "775e16ca7b450f51"
             ]
         ]
-    },
-    {
-        "id": "0f968ab3cb548317",
-        "type": "comment",
-        "z": "9ffaf4a50f363f22",
-        "name": "ir brightness todo",
-        "info": "",
-        "x": 820,
-        "y": 520,
-        "wires": []
     },
     {
         "id": "8de734d93914b78d",
         "type": "http request",
         "z": "9ffaf4a50f363f22",
-        "name": "Send bulbCommand",
+        "name": "sendCmd",
         "method": "POST",
         "ret": "txt",
         "paytoqs": "body",
@@ -1375,8 +1962,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1140,
-        "y": 480,
+        "x": 940,
+        "y": 440,
         "wires": [
             []
         ]
@@ -1385,7 +1972,7 @@
         "id": "89be4982171e0fe5",
         "type": "function",
         "z": "9ffaf4a50f363f22",
-        "name": "prepare msg.url and msg.payload",
+        "name": "on/off",
         "func": "msg.url = \"http://192.168.1.41/json/si\" // where to send request\nlet statusFromGHome = msg.payload.params.on; // assigning to variable\n\n// if I wanted to put value from msg straight into payload you would do this: \n// msg.payload = `{\"bulbCommand\": ${msg.payload.params.on}}`\n\n// translate ghome command to irBulb command, \"03\" = off, \"04\" - on\n// constant payloads in this case so surrounded by ' not ` \nif(statusFromGHome){\n    msg.payload = '{\"bulbCommand\": \"04\"}'\n} else {\n    msg.payload = '{\"bulbCommand\": \"03\"}'\n}\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1393,8 +1980,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 480,
+        "x": 810,
+        "y": 440,
         "wires": [
             [
                 "8de734d93914b78d"
@@ -1402,41 +1989,10 @@
         ]
     },
     {
-        "id": "6687676799b04fb4",
-        "type": "comment",
-        "z": "9ffaf4a50f363f22",
-        "name": "DO JSON REQUESTS LIKE THIS:",
-        "info": "",
-        "x": 880,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "37b89f5589a15127",
-        "type": "http request",
-        "z": "9ffaf4a50f363f22",
-        "name": "Send POST to: msg.url, with body: msg.payload",
-        "method": "POST",
-        "ret": "txt",
-        "paytoqs": "body",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1520,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c2651d12f8bea324",
         "type": "change",
         "z": "9ffaf4a50f363f22",
+        "d": true,
         "name": "wled short",
         "rules": [
             {
@@ -1496,5 +2052,494 @@
                 "2f3634a5c980132c"
             ]
         ]
+    },
+    {
+        "id": "6bc30fc43726c6ef",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.77/api",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 1180,
+        "wires": [
+            [
+                "ad75c85cb9898c5e",
+                "bc247d184e4e8b73"
+            ]
+        ]
+    },
+    {
+        "id": "60ecc9f5144fede4",
+        "type": "inject",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1180,
+        "wires": [
+            [
+                "6bc30fc43726c6ef"
+            ]
+        ]
+    },
+    {
+        "id": "ad75c85cb9898c5e",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "bc247d184e4e8b73",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "pc online?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "\"/api: PC status: Online\"",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "\"/api: PC status: Offline\"",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 1180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a29b55984f332de5",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "property": "payload.params.brightness",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "25",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "25",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "50",
+                "vt": "num",
+                "v2": "75",
+                "v2t": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 810,
+        "y": 520,
+        "wires": [
+            [
+                "e7302ee6f5d9bcd6"
+            ],
+            [
+                "66c428748f886db9"
+            ],
+            [
+                "24f37f99882f7d7d"
+            ],
+            [
+                "cb4946d6ed38ebcd"
+            ]
+        ]
+    },
+    {
+        "id": "8af80de7fa52e249",
+        "type": "http request",
+        "z": "9ffaf4a50f363f22",
+        "name": "sendCmd",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1580,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7302ee6f5d9bcd6",
+        "type": "subflow:5d87c4a6c424c840",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 940,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66c428748f886db9",
+        "type": "subflow:5d87c4a6c424c840",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 940,
+        "y": 520,
+        "wires": [
+            [
+                "a9153339ee11b0e5"
+            ]
+        ]
+    },
+    {
+        "id": "24f37f99882f7d7d",
+        "type": "subflow:5d87c4a6c424c840",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 940,
+        "y": 540,
+        "wires": [
+            [
+                "6fc42eb20bfd0d6a"
+            ]
+        ]
+    },
+    {
+        "id": "cb4946d6ed38ebcd",
+        "type": "subflow:5d87c4a6c424c840",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 940,
+        "y": 560,
+        "wires": [
+            [
+                "3ac8f48b90afcc65"
+            ]
+        ]
+    },
+    {
+        "id": "775e16ca7b450f51",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "payload.params.color",
+        "property": "payload.params.color",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "spectrumRGB",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "temperature",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 880,
+        "y": 640,
+        "wires": [
+            [
+                "f515a6706e07e594"
+            ],
+            [
+                "939cc7c5f5032f05"
+            ]
+        ]
+    },
+    {
+        "id": "a9153339ee11b0e5",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1070,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fc42eb20bfd0d6a",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1070,
+        "y": 540,
+        "wires": [
+            [
+                "0741f7c947d09f6a"
+            ]
+        ]
+    },
+    {
+        "id": "0741f7c947d09f6a",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1190,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ac8f48b90afcc65",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1070,
+        "y": 560,
+        "wires": [
+            [
+                "b72716844b793ad2"
+            ]
+        ]
+    },
+    {
+        "id": "b72716844b793ad2",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            [
+                "3d2b84e815cd9a04"
+            ]
+        ]
+    },
+    {
+        "id": "3d2b84e815cd9a04",
+        "type": "subflow:27bb0e5cddfa934e",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1310,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "939cc7c5f5032f05",
+        "type": "range",
+        "z": "9ffaf4a50f363f22",
+        "minin": "2000",
+        "maxin": "6500",
+        "minout": "0",
+        "maxout": "4",
+        "action": "scale",
+        "round": true,
+        "property": "payload.params.color.temperature",
+        "name": "",
+        "x": 1090,
+        "y": 740,
+        "wires": [
+            [
+                "8adc57dc89421eb0",
+                "050af29066315f82"
+            ]
+        ]
+    },
+    {
+        "id": "8adc57dc89421eb0",
+        "type": "switch",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "property": "payload.params.color.temperature",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 1210,
+        "y": 740,
+        "wires": [
+            [
+                "8967e17b3fb8216e"
+            ],
+            [
+                "ec7c8b1955afb649"
+            ],
+            [
+                "1c745f8efd75e179"
+            ],
+            [
+                "75dd7b828bd1657b"
+            ],
+            [
+                "6f081a60a5e94614"
+            ]
+        ]
+    },
+    {
+        "id": "6f081a60a5e94614",
+        "type": "subflow:e51f69071017f997",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1350,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75dd7b828bd1657b",
+        "type": "subflow:52afd969a1cf0ffc",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1360,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c745f8efd75e179",
+        "type": "subflow:f346ac36acd43e99",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1350,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec7c8b1955afb649",
+        "type": "subflow:eb65f773a621ccc4",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1350,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8967e17b3fb8216e",
+        "type": "subflow:cc494343ad5f7d2c",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "x": 1350,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1682738acd2e7278",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "temperature",
+        "info": "",
+        "x": 1270,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "050af29066315f82",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "temp",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.params.color.temperature",
+        "statusType": "msg",
+        "x": 1230,
+        "y": 820,
+        "wires": []
     }
 ]
