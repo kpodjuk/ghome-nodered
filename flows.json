@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "ca8d3df2f1a7e9a9",
+        "type": "tab",
+        "label": "misc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "686cdb22219e9c9f",
         "type": "subflow",
         "name": "bri down",
@@ -335,6 +343,18 @@
         ]
     },
     {
+        "id": "7789e0962ef366c1",
+        "type": "junction",
+        "z": "9ffaf4a50f363f22",
+        "x": 260,
+        "y": 1520,
+        "wires": [
+            [
+                "a0ef447a7cd195a7"
+            ]
+        ]
+    },
+    {
         "id": "caa4d98949c7e701",
         "type": "google-home-conf",
         "username": "Fixero"
@@ -454,6 +474,17 @@
         "disp": true,
         "width": "15",
         "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "12a448db8a6b02d4",
+        "type": "ui_group",
+        "name": "Terminal",
+        "tab": "8d25db8c821dac72",
+        "order": 2,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
         "className": ""
     },
     {
@@ -865,7 +896,7 @@
         "name": "ambient",
         "topic": "",
         "x": 130,
-        "y": 1340,
+        "y": 1140,
         "wires": [
             [
                 "f9f5222d3307d3a2"
@@ -884,7 +915,7 @@
         "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
         "output": "str",
         "x": 280,
-        "y": 1340,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -1821,7 +1852,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 330,
-        "y": 840,
+        "y": 1260,
         "wires": []
     },
     {
@@ -1859,7 +1890,7 @@
         "scope": null,
         "uncaught": false,
         "x": 140,
-        "y": 840,
+        "y": 1260,
         "wires": [
             [
                 "cd75ec966815c4c1"
@@ -2069,8 +2100,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 310,
-        "y": 1180,
+        "x": 290,
+        "y": 1080,
         "wires": [
             [
                 "ad75c85cb9898c5e",
@@ -2099,8 +2130,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 1180,
+        "x": 140,
+        "y": 1080,
         "wires": [
             [
                 "6bc30fc43726c6ef"
@@ -2119,8 +2150,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 1240,
+        "x": 460,
+        "y": 1140,
         "wires": []
     },
     {
@@ -2145,8 +2176,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 1180,
+        "x": 470,
+        "y": 1080,
         "wires": [
             [],
             []
@@ -2540,6 +2571,854 @@
         "statusType": "msg",
         "x": 1230,
         "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3f8aa79d35eb2d70",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "34024",
+        "acknowledge": true,
+        "name": "log-worktime",
+        "topic": "",
+        "x": 150,
+        "y": 1500,
+        "wires": [
+            [
+                "7789e0962ef366c1"
+            ]
+        ]
+    },
+    {
+        "id": "291223240391f215",
+        "type": "inject",
+        "z": "9ffaf4a50f363f22",
+        "name": "log-worktime",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1560,
+        "wires": [
+            [
+                "7789e0962ef366c1"
+            ]
+        ]
+    },
+    {
+        "id": "a0ef447a7cd195a7",
+        "type": "exec",
+        "z": "9ffaf4a50f363f22",
+        "command": "cd gsheets-append-row && node index-REAL.js",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 480,
+        "y": 1520,
+        "wires": [
+            [
+                "c630370eba53b45e",
+                "9e343e0c2c4f6a87"
+            ],
+            [
+                "dae3acab597ab777",
+                "14ea972e9d295428"
+            ],
+            [
+                "c630370eba53b45e",
+                "f127c84cba53c805"
+            ]
+        ]
+    },
+    {
+        "id": "c630370eba53b45e",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "stdout",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 790,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "dae3acab597ab777",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "stderr",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 790,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "50be8f982d4e3247",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "2",
+        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0cce82166a2f2dcc",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7edb7dbf1295f30a",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14ea972e9d295428",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "\\\\n -> <br>",
+        "func": "\n\nmsg.payload = msg.payload.replace(/\\n/g, \"<br />\");\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1620,
+        "wires": [
+            [
+                "7edb7dbf1295f30a"
+            ]
+        ]
+    },
+    {
+        "id": "9e343e0c2c4f6a87",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "\\\\n -> <br>",
+        "func": "\n\nmsg.payload = msg.payload.replace(/\\n/g, \"<br />\");\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1580,
+        "wires": [
+            [
+                "0cce82166a2f2dcc"
+            ]
+        ]
+    },
+    {
+        "id": "f127c84cba53c805",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "timestamp",
+        "func": "\nlet timestamp = new Date();\n\nmsg.payload = \"Code: \"+msg.payload.code+\"<br>Timestamp: \"+timestamp;\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 1540,
+        "wires": [
+            [
+                "50be8f982d4e3247"
+            ]
+        ]
+    },
+    {
+        "id": "b44093bf4d7b577e",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "executes /home/gheets-api-appendRow/index.js",
+        "info": "e",
+        "x": 260,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "196af548e29ff66c",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 5,
+        "width": "15",
+        "height": "2",
+        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f3e31c406d0104e",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 3,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e26a136bcd1036f4",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 4,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d4c601d7ae70f51",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "\\\\n -> <br>",
+        "func": "\n\nmsg.payload = msg.payload.replace(/\\n/g, \"<br />\");\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1940,
+        "wires": [
+            [
+                "e26a136bcd1036f4"
+            ]
+        ]
+    },
+    {
+        "id": "3e58178715e9cc40",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "\\\\n -> <br>",
+        "func": "\n\nmsg.payload = msg.payload.replace(/\\n/g, \"<br />\");\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1900,
+        "wires": [
+            [
+                "1f3e31c406d0104e"
+            ]
+        ]
+    },
+    {
+        "id": "ddbff0f78cc80d48",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "timestamp",
+        "func": "\nlet timestamp = new Date();\n\nmsg.payload = \"Code: \"+msg.payload.code+\"<br>Time: \"+timestamp+\"<br>\";\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1860,
+        "wires": [
+            [
+                "196af548e29ff66c"
+            ]
+        ]
+    },
+    {
+        "id": "603552b00a7d6a15",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "execute commands, examples in label",
+        "info": " example cmd: cd gsheets-append-row && ls -l; \n Example 2: cd gsheets-append-row && node -index.js \nIt always starts in home dir so you have to glue them together with &&\n\nTo update sheets code:\ncd gsheets-append-row && git pull\n",
+        "x": 210,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "a5e7b7dc1d191e88",
+        "type": "exec",
+        "z": "9ffaf4a50f363f22",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "30",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 310,
+        "y": 1900,
+        "wires": [
+            [
+                "3e58178715e9cc40",
+                "e707d88f236eb90f"
+            ],
+            [
+                "8d4c601d7ae70f51",
+                "e707d88f236eb90f"
+            ],
+            [
+                "ddbff0f78cc80d48",
+                "e707d88f236eb90f"
+            ]
+        ]
+    },
+    {
+        "id": "551d7e507ea3d5cc",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "stderr",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 310,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "b801a062ce885e46",
+        "type": "ui_text_input",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "label": "cmd",
+        "tooltip": "",
+        "group": "12a448db8a6b02d4",
+        "order": 2,
+        "width": "15",
+        "height": "2",
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": false,
+        "className": "",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1860,
+        "wires": [
+            [
+                "a5e7b7dc1d191e88",
+                "551d7e507ea3d5cc",
+                "c0870af08ed65219"
+            ]
+        ]
+    },
+    {
+        "id": "c0870af08ed65219",
+        "type": "exec",
+        "z": "9ffaf4a50f363f22",
+        "command": "pwd",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "30",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 310,
+        "y": 1840,
+        "wires": [
+            [
+                "5bbf67e6bba3549d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5bbf67e6bba3549d",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current directory: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 550,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "e707d88f236eb90f",
+        "type": "debug",
+        "z": "9ffaf4a50f363f22",
+        "name": "stderr",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 510,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "c8beefd196afe182",
+        "type": "exec",
+        "z": "9ffaf4a50f363f22",
+        "d": true,
+        "command": "cd gsheets-append-row && node index.js",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 460,
+        "y": 1560,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a2e08c8a45c5c9f6",
+        "type": "inject",
+        "z": "9ffaf4a50f363f22",
+        "name": "pull repo",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "e26ffa2137bb7684"
+            ]
+        ]
+    },
+    {
+        "id": "e26ffa2137bb7684",
+        "type": "exec",
+        "z": "9ffaf4a50f363f22",
+        "command": "cd gsheets-append-row && git pull",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 440,
+        "y": 1640,
+        "wires": [
+            [
+                "9e343e0c2c4f6a87"
+            ],
+            [
+                "14ea972e9d295428"
+            ],
+            [
+                "f127c84cba53c805"
+            ]
+        ]
+    },
+    {
+        "id": "aa50a93f12f29304",
+        "type": "inject",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "const request payload",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "$'https://content-sheets.googleapis.com/v4/spreadsheets/1skT1ZcRI9HCk7Eg6FU5WUMQKszHQqG9Q6sRW4tqD0tU/values/Log\\u0021A2:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&includeValuesInResponse=false&responseValueRenderOption=FORMATTED_VALUE&responseDateTimeRenderOption=FORMATTED_STRING&alt=json&key=AIzaSyDjUFwTuB03t2wuSLxTRiYrwWUEbGapQgQ' \\   -H 'authority: content-sheets.googleapis.com' \\   -H 'accept: */*' \\   -H 'accept-language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7' \\   -H 'authorization: Bearer ya29.a0AfB_byBV4cuapSIUIHLS1edoT_y3ZDcNTosS7FGFym_i7Acf4vYYKz55UQiXWLKs_KKn8SIbbv6Khbr61ZG5xtWwsQ6X6kmZ4TohQ8B1DxAbLzVUW0ChSWyjim5-tjLjQPqBjlv0UhmieoqXJyoxTLK4XQ0m989EewaCgYKAW0SARESFQHGX2MisuqLQ8Gd1aUrCbDxqybiVg0169' \\   -H 'content-type: application/json' \\   -H 'dnt: 1' \\   -H 'origin: https://content-sheets.googleapis.com' \\   -H 'referer: https://content-sheets.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.pl.h4DDnAfgXls.O%2Fd%3D1%2Frs%3DAHpOoo9wNn0vX-xWLpFjETtn41G_qSxb3A%2Fm%3D__features__' \\   -H 'sec-ch-ua: \"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"' \\   -H 'sec-ch-ua-mobile: ?0' \\   -H 'sec-ch-ua-platform: \"Windows\"' \\   -H 'sec-fetch-dest: empty' \\   -H 'sec-fetch-mode: cors' \\   -H 'sec-fetch-site: same-origin' \\   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36' \\   -H 'x-client-data: CJS2yQEIo7bJAQipncoBCKPzygEIlqHLAQid/swBCIWgzQEIou7NAQjA7s0BCIPwzQEY9MnNARin6s0BGMr4zQE=' \\   -H 'x-clientdetails: appVersion=5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F121.0.0.0%20Safari%2F537.36&platform=Win32&userAgent=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F121.0.0.0%20Safari%2F537.36' \\   -H 'x-goog-encode-response-if-executable: base64' \\   -H 'x-javascript-user-agent: google-api-javascript-client/1.1.0' \\   -H 'x-origin: http://localhost:3000' \\   -H 'x-referer: http://localhost:3000' \\   -H 'x-requested-with: XMLHttpRequest' \\   --data-raw '{\"values\":[[\"2024-02-29T02:09:06.945Z\",\"TEST\"]]}' \\   --compressed",
+        "payloadType": "str",
+        "x": 260,
+        "y": 860,
+        "wires": [
+            [
+                "6c33fcb2efacf735",
+                "41beee6d2cd0288c"
+            ]
+        ]
+    },
+    {
+        "id": "6c33fcb2efacf735",
+        "type": "exec",
+        "z": "ca8d3df2f1a7e9a9",
+        "command": "curl",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 490,
+        "y": 900,
+        "wires": [
+            [
+                "56c633daa1deb82b"
+            ],
+            [
+                "56c633daa1deb82b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "56c633daa1deb82b",
+        "type": "debug",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "req result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 660,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "41beee6d2cd0288c",
+        "type": "debug",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "append to cmd",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 540,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "6b4f503a72d0e2ca",
+        "type": "inject",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 600,
+        "wires": [
+            [
+                "38269dd97bcb8bae"
+            ]
+        ]
+    },
+    {
+        "id": "38269dd97bcb8bae",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "copy node.js fetch here",
+        "func": "// import fetch from \"node-fetch\";\n\nfetch(\n    \"https://content-sheets.googleapis.com/v4/spreadsheets/1skT1ZcRI9HCk7Eg6FU5WUMQKszHQqG9Q6sRW4tqD0tU/values/Log!A2:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&includeValuesInResponse=false&responseValueRenderOption=FORMATTED_VALUE&responseDateTimeRenderOption=FORMATTED_STRING&alt=json&key=AIzaSyDjUFwTuB03t2wuSLxTRiYrwWUEbGapQgQ\",\n    {\n        headers: {\n            accept: \"*/*\",\n            \"accept-language\": \"pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7\",\n            authorization:\n                \"Bearer ya29.a0AfB_byBV4cuapSIUIHLS1edoT_y3ZDcNTosS7FGFym_i7Acf4vYYKz55UQiXWLKs_KKn8SIbbv6Khbr61ZG5xtWwsQ6X6kmZ4TohQ8B1DxAbLzVUW0ChSWyjim5-tjLjQPqBjlv0UhmieoqXJyoxTLK4XQ0m989EewaCgYKAW0SARESFQHGX2MisuqLQ8Gd1aUrCbDxqybiVg0169\",\n            \"content-type\": \"application/json\",\n            \"sec-ch-ua\":\n                '\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"',\n            \"sec-ch-ua-mobile\": \"?0\",\n            \"sec-ch-ua-platform\": '\"Windows\"',\n            \"sec-fetch-dest\": \"empty\",\n            \"sec-fetch-mode\": \"cors\",\n            \"sec-fetch-site\": \"same-origin\",\n            \"x-client-data\":\n                \"CJS2yQEIo7bJAQipncoBCKPzygEIlqHLAQid/swBCIWgzQEIou7NAQjA7s0BCIPwzQEY9MnNARin6s0BGMr4zQE=\",\n            \"x-clientdetails\":\n                \"appVersion=5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F121.0.0.0%20Safari%2F537.36&platform=Win32&userAgent=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F121.0.0.0%20Safari%2F537.36\",\n            \"x-goog-encode-response-if-executable\": \"base64\",\n            \"x-javascript-user-agent\": \"google-api-javascript-client/1.1.0\",\n            \"x-origin\": \"http://localhost:3000\",\n            \"x-referer\": \"http://localhost:3000\",\n            \"x-requested-with\": \"XMLHttpRequest\",\n            Referer:\n                \"https://content-sheets.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.pl.h4DDnAfgXls.O%2Fd%3D1%2Frs%3DAHpOoo9wNn0vX-xWLpFjETtn41G_qSxb3A%2Fm%3D__features__\",\n            \"Referrer-Policy\": \"strict-origin-when-cross-origin\",\n        },\n        body: '{\"values\":[[\"2024-02-29T02:09:06.945Z\",\"TESTgfdsg\"]]}',\n        method: \"POST\",\n    }\n);\n\n// msg.payload = response;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fetch",
+                "module": "node-fetch"
+            }
+        ],
+        "x": 450,
+        "y": 600,
+        "wires": [
+            [
+                "da8091b13d0d7b2e"
+            ]
+        ]
+    },
+    {
+        "id": "da8091b13d0d7b2e",
+        "type": "debug",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "complete msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "75bcdeec853477f2",
+        "type": "comment",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "This is confirmed to be working but you need to update token manually",
+        "info": "This is confirmed to be working but you need to update token manually",
+        "x": 590,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f69ba6d70fce27c7",
+        "type": "file",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "token.json",
+        "filename": "token.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0ba9253072a759d",
+        "type": "inject",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "create token",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"type\":\"authorized_user\",\"client_id\":\"2984513983-n0vmc8oq8ir3g9p50i10lcsv2bgkgsr2.apps.googleusercontent.com\",\"client_secret\":\"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\",\"refresh_token\":\"1//09ABc4NosA3KtCgYIARAAGAkSNwF-L9Irjbg2B0UTGO-NxrUOuOQDrJ3ClX_KamhSInF1nlcHlpG1NusuFVXpXB2W9lZOiIoIzXE\"}",
+        "payloadType": "json",
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "f69ba6d70fce27c7"
+            ]
+        ]
+    },
+    {
+        "id": "18463796663bf6e8",
+        "type": "file in",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "token.json",
+        "filename": "token.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "23584fb589c73aab"
+            ]
+        ]
+    },
+    {
+        "id": "cff0e73a5980cf66",
+        "type": "inject",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "read token",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "18463796663bf6e8"
+            ]
+        ]
+    },
+    {
+        "id": "23584fb589c73aab",
+        "type": "debug",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "token read:",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f515184b640f3965",
+        "type": "comment",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "Will create/read file in home dir",
+        "info": "",
+        "x": 310,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ce38d71236c08a44",
+        "type": "comment",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "examples below ----------------------------------------------------------",
+        "info": "",
+        "x": 340,
+        "y": 120,
         "wires": []
     }
 ]
