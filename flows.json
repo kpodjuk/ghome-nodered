@@ -355,19 +355,6 @@
         ]
     },
     {
-        "id": "caa4d98949c7e701",
-        "type": "google-home-conf",
-        "username": "Fixero"
-    },
-    {
-        "id": "8d25db8c821dac72",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "bdd3e9eeb8cd86cd",
         "type": "ui_base",
         "theme": {
@@ -390,7 +377,8 @@
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
                 "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
@@ -466,6 +454,14 @@
         }
     },
     {
+        "id": "8d25db8c821dac72",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "4826374eb28b8579",
         "type": "ui_group",
         "name": "Debug",
@@ -486,6 +482,11 @@
         "width": "15",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "caa4d98949c7e701",
+        "type": "google-home-conf",
+        "username": "Fixero"
     },
     {
         "id": "d395080dbb5f6af2",
@@ -819,91 +820,6 @@
         ]
     },
     {
-        "id": "4eea07dacc3cc504",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32645",
-        "acknowledge": true,
-        "name": "wled-desk",
-        "topic": "desk",
-        "x": 140,
-        "y": 160,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
-            ]
-        ]
-    },
-    {
-        "id": "5a775f44c5a04ffd",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32646",
-        "acknowledge": true,
-        "name": "wled-up",
-        "topic": "",
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
-            ]
-        ]
-    },
-    {
-        "id": "2304b10cd110da24",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32647",
-        "acknowledge": true,
-        "name": "wled-down",
-        "topic": "",
-        "x": 140,
-        "y": 280,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
-            ]
-        ]
-    },
-    {
-        "id": "610291c954af6852",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32650",
-        "acknowledge": true,
-        "name": "pc",
-        "topic": "",
-        "x": 130,
-        "y": 980,
-        "wires": [
-            [
-                "1a239aca8279508e"
-            ]
-        ]
-    },
-    {
-        "id": "2e37ae7f161d44bf",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32649",
-        "acknowledge": true,
-        "name": "ambient",
-        "topic": "",
-        "x": 130,
-        "y": 1140,
-        "wires": [
-            [
-                "f9f5222d3307d3a2"
-            ]
-        ]
-    },
-    {
         "id": "f9f5222d3307d3a2",
         "type": "template",
         "z": "9ffaf4a50f363f22",
@@ -1086,90 +1002,6 @@
         ]
     },
     {
-        "id": "6946712f49f33e80",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "onof",
-        "format": "{{msg.payload.params.on}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 950,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "9d1a3d699b4477e4",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "bri",
-        "format": "{{msg.payload.params.brightness}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 950,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "75054f6c44fdfdba",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "temperature",
-        "format": "{{msg.payload.params.color.temperature}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 1190,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "97bda075be31518a",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "spectrumRGB",
-        "format": "{{msg.payload.params.color.spectrumRGB}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 1200,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "bbedd69c8c297a0b",
         "type": "switch",
         "z": "9ffaf4a50f363f22",
@@ -1278,78 +1110,6 @@
                 "c6096322a65fa967"
             ]
         ]
-    },
-    {
-        "id": "732597945aedf1d6",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "hex color",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 1460,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "ba1106a4146039b5",
-        "type": "ui_colour_picker",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "label": "",
-        "group": "4826374eb28b8579",
-        "format": "hex",
-        "outformat": "string",
-        "showSwatch": true,
-        "showPicker": true,
-        "showValue": true,
-        "showHue": false,
-        "showAlpha": false,
-        "showLightness": true,
-        "square": "false",
-        "dynOutput": "false",
-        "order": 4,
-        "width": "1",
-        "height": "1",
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1470,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ca541719d9b3ad9e",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "devName",
-        "format": "{{msg.name}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 1460,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "6d22ec1b33fc9833",
@@ -1491,27 +1251,6 @@
         "info": "",
         "x": 1070,
         "y": 80,
-        "wires": []
-    },
-    {
-        "id": "eef01edb1bef9cc7",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "status",
-        "format": "{{msg.status}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 2390,
-        "y": 120,
         "wires": []
     },
     {
@@ -1822,23 +1561,6 @@
         ]
     },
     {
-        "id": "8ac12cb22d3b3ee3",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32817",
-        "acknowledge": true,
-        "name": "wled-ir",
-        "topic": "",
-        "x": 130,
-        "y": 340,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
-            ]
-        ]
-    },
-    {
         "id": "cd75ec966815c4c1",
         "type": "debug",
         "z": "9ffaf4a50f363f22",
@@ -2044,23 +1766,6 @@
         "wires": [
             [
                 "b3c5cda6a292e8b0"
-            ]
-        ]
-    },
-    {
-        "id": "92eb1373e49f154d",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "32842",
-        "acknowledge": true,
-        "name": "wled-short",
-        "topic": "",
-        "x": 140,
-        "y": 400,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
             ]
         ]
     },
@@ -2574,23 +2279,6 @@
         "wires": []
     },
     {
-        "id": "3f8aa79d35eb2d70",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "conf": "caa4d98949c7e701",
-        "device": "34024",
-        "acknowledge": true,
-        "name": "log-worktime",
-        "topic": "",
-        "x": 150,
-        "y": 1500,
-        "wires": [
-            [
-                "7789e0962ef366c1"
-            ]
-        ]
-    },
-    {
         "id": "291223240391f215",
         "type": "inject",
         "z": "9ffaf4a50f363f22",
@@ -2613,7 +2301,7 @@
         "id": "a0ef447a7cd195a7",
         "type": "exec",
         "z": "9ffaf4a50f363f22",
-        "command": "cd gsheets-append-row && node index-REAL.js",
+        "command": "cd ../gsheets-append-row/ && node index-REAL.js ",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -2621,7 +2309,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 480,
+        "x": 490,
         "y": 1520,
         "wires": [
             [
@@ -2660,7 +2348,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "stderr",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -2671,69 +2359,6 @@
         "x": 790,
         "y": 1440,
         "wires": []
-    },
-    {
-        "id": "50be8f982d4e3247",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "name": "",
-        "order": 12,
-        "width": "15",
-        "height": "2",
-        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 1540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0cce82166a2f2dcc",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "name": "",
-        "order": 12,
-        "width": "15",
-        "height": "5",
-        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 1580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7edb7dbf1295f30a",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "4826374eb28b8579",
-        "name": "",
-        "order": 12,
-        "width": "15",
-        "height": "5",
-        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 960,
-        "y": 1620,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "14ea972e9d295428",
@@ -2804,69 +2429,6 @@
         "x": 260,
         "y": 1400,
         "wires": []
-    },
-    {
-        "id": "196af548e29ff66c",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "12a448db8a6b02d4",
-        "name": "",
-        "order": 5,
-        "width": "15",
-        "height": "2",
-        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 680,
-        "y": 1860,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1f3e31c406d0104e",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "12a448db8a6b02d4",
-        "name": "",
-        "order": 3,
-        "width": "15",
-        "height": "5",
-        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 680,
-        "y": 1900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e26a136bcd1036f4",
-        "type": "ui_template",
-        "z": "9ffaf4a50f363f22",
-        "group": "12a448db8a6b02d4",
-        "name": "",
-        "order": 4,
-        "width": "15",
-        "height": "5",
-        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 680,
-        "y": 1940,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "8d4c601d7ae70f51",
@@ -2985,34 +2547,6 @@
         "wires": []
     },
     {
-        "id": "b801a062ce885e46",
-        "type": "ui_text_input",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "label": "cmd",
-        "tooltip": "",
-        "group": "12a448db8a6b02d4",
-        "order": 2,
-        "width": "15",
-        "height": "2",
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "sendOnBlur": false,
-        "className": "",
-        "topicType": "msg",
-        "x": 110,
-        "y": 1860,
-        "wires": [
-            [
-                "a5e7b7dc1d191e88",
-                "551d7e507ea3d5cc",
-                "c0870af08ed65219"
-            ]
-        ]
-    },
-    {
         "id": "c0870af08ed65219",
         "type": "exec",
         "z": "9ffaf4a50f363f22",
@@ -3033,27 +2567,6 @@
             [],
             []
         ]
-    },
-    {
-        "id": "5bbf67e6bba3549d",
-        "type": "ui_text",
-        "z": "9ffaf4a50f363f22",
-        "group": "12a448db8a6b02d4",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Current directory: ",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 550,
-        "y": 1820,
-        "wires": []
     },
     {
         "id": "e707d88f236eb90f",
@@ -3135,6 +2648,494 @@
             ],
             [
                 "f127c84cba53c805"
+            ]
+        ]
+    },
+    {
+        "id": "b801a062ce885e46",
+        "type": "ui_text_input",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "label": "cmd",
+        "tooltip": "",
+        "group": "12a448db8a6b02d4",
+        "order": 2,
+        "width": "15",
+        "height": "2",
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": false,
+        "className": "",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1860,
+        "wires": [
+            [
+                "a5e7b7dc1d191e88",
+                "551d7e507ea3d5cc",
+                "c0870af08ed65219"
+            ]
+        ]
+    },
+    {
+        "id": "ba1106a4146039b5",
+        "type": "ui_colour_picker",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "label": "",
+        "group": "4826374eb28b8579",
+        "format": "hex",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 1470,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6946712f49f33e80",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "onof",
+        "format": "{{msg.payload.params.on}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 950,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9d1a3d699b4477e4",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "bri",
+        "format": "{{msg.payload.params.brightness}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 950,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "75054f6c44fdfdba",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "temperature",
+        "format": "{{msg.payload.params.color.temperature}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1190,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "97bda075be31518a",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "spectrumRGB",
+        "format": "{{msg.payload.params.color.spectrumRGB}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1200,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "732597945aedf1d6",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "hex color",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1460,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ca541719d9b3ad9e",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "devName",
+        "format": "{{msg.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1460,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "eef01edb1bef9cc7",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "status",
+        "format": "{{msg.status}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2390,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5bbf67e6bba3549d",
+        "type": "ui_text",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current directory: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 550,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "50be8f982d4e3247",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "2",
+        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0cce82166a2f2dcc",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7edb7dbf1295f30a",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "4826374eb28b8579",
+        "name": "",
+        "order": 12,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "196af548e29ff66c",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 5,
+        "width": "15",
+        "height": "2",
+        "format": "<h1>Exit code</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f3e31c406d0104e",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 3,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stdout</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e26a136bcd1036f4",
+        "type": "ui_template",
+        "z": "9ffaf4a50f363f22",
+        "group": "12a448db8a6b02d4",
+        "name": "",
+        "order": 4,
+        "width": "15",
+        "height": "5",
+        "format": "<h1>stderr</h1>\n<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4eea07dacc3cc504",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32645",
+        "acknowledge": true,
+        "name": "wled-desk",
+        "topic": "desk",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "5a775f44c5a04ffd",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32646",
+        "acknowledge": true,
+        "name": "wled-up",
+        "topic": "",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "2304b10cd110da24",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32647",
+        "acknowledge": true,
+        "name": "wled-down",
+        "topic": "",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "610291c954af6852",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32650",
+        "acknowledge": true,
+        "name": "pc",
+        "topic": "",
+        "x": 130,
+        "y": 980,
+        "wires": [
+            [
+                "1a239aca8279508e"
+            ]
+        ]
+    },
+    {
+        "id": "2e37ae7f161d44bf",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32649",
+        "acknowledge": true,
+        "name": "ambient",
+        "topic": "",
+        "x": 130,
+        "y": 1140,
+        "wires": [
+            [
+                "f9f5222d3307d3a2"
+            ]
+        ]
+    },
+    {
+        "id": "8ac12cb22d3b3ee3",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32817",
+        "acknowledge": true,
+        "name": "wled-ir",
+        "topic": "",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "92eb1373e49f154d",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "32842",
+        "acknowledge": true,
+        "name": "wled-short",
+        "topic": "",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "3f8aa79d35eb2d70",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "34024",
+        "acknowledge": true,
+        "name": "log-worktime",
+        "topic": "",
+        "x": 150,
+        "y": 1500,
+        "wires": [
+            [
+                "7789e0962ef366c1"
             ]
         ]
     },
