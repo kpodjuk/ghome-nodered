@@ -8,9 +8,25 @@
         "env": []
     },
     {
+        "id": "9a148c9dca835f17",
+        "type": "tab",
+        "label": "Update g home status",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ca8d3df2f1a7e9a9",
         "type": "tab",
         "label": "misc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8b6530bcd77a42d0",
+        "type": "tab",
+        "label": "ghome onOff response",
         "disabled": false,
         "info": "",
         "env": []
@@ -283,8 +299,8 @@
         "id": "f6b62a21c7ac773f",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 240,
-        "y": 280,
+        "x": 260,
+        "y": 360,
         "wires": [
             [
                 "399e830f6527be55"
@@ -295,8 +311,8 @@
         "id": "4b554fb5f150a3f4",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 2280,
-        "y": 180,
+        "x": 2300,
+        "y": 260,
         "wires": [
             [
                 "ca4a200023daf268",
@@ -310,8 +326,8 @@
         "id": "2a40f09a09e9863f",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1520,
-        "y": 160,
+        "x": 1540,
+        "y": 240,
         "wires": [
             [
                 "9d087983f318aca6"
@@ -322,8 +338,8 @@
         "id": "64a06e4d992eae97",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 1520,
-        "y": 140,
+        "x": 1540,
+        "y": 220,
         "wires": [
             [
                 "b7edd705e6299cc2"
@@ -334,11 +350,12 @@
         "id": "b3c5cda6a292e8b0",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 760,
-        "y": 260,
+        "x": 780,
+        "y": 340,
         "wires": [
             [
-                "bbedd69c8c297a0b"
+                "bbedd69c8c297a0b",
+                "1e64ebb1c957f856"
             ]
         ]
     },
@@ -346,11 +363,26 @@
         "id": "7789e0962ef366c1",
         "type": "junction",
         "z": "9ffaf4a50f363f22",
-        "x": 260,
-        "y": 1520,
+        "x": 280,
+        "y": 1600,
         "wires": [
             [
                 "a0ef447a7cd195a7"
+            ]
+        ]
+    },
+    {
+        "id": "cafd3fca415f4999",
+        "type": "junction",
+        "z": "9a148c9dca835f17",
+        "x": 660,
+        "y": 660,
+        "wires": [
+            [
+                "f627770d794b52d2",
+                "08fb6c9b87e0ba1a",
+                "0edc8d6dbd0d8751",
+                "77d45ef6a21eaa7a"
             ]
         ]
     },
@@ -829,23 +861,6 @@
         ]
     },
     {
-        "id": "f9f5222d3307d3a2",
-        "type": "template",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Michal? Chodzi o tego idiote?\nChlop supli do wleda nie umie zalaczyc 😂😂😂😂",
-        "output": "str",
-        "x": 280,
-        "y": 1140,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "399e830f6527be55",
         "type": "switch",
         "z": "9ffaf4a50f363f22",
@@ -882,8 +897,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 330,
-        "y": 280,
+        "x": 350,
+        "y": 360,
         "wires": [
             [
                 "1b09234adde36173"
@@ -921,8 +936,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 260,
+        "x": 560,
+        "y": 340,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -948,8 +963,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 280,
+        "x": 570,
+        "y": 360,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -975,8 +990,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 300,
+        "x": 580,
+        "y": 380,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -1002,8 +1017,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
-        "y": 520,
+        "x": 510,
+        "y": 600,
         "wires": [
             [
                 "075159bfbe7990f4"
@@ -1037,8 +1052,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 740,
-        "y": 180,
+        "x": 760,
+        "y": 260,
         "wires": [
             [
                 "6946712f49f33e80",
@@ -1065,8 +1080,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 280,
+        "x": 1260,
+        "y": 360,
         "wires": [
             [
                 "732597945aedf1d6",
@@ -1107,8 +1122,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 960,
-        "y": 280,
+        "x": 980,
+        "y": 360,
         "wires": [
             [
                 "97bda075be31518a",
@@ -1139,8 +1154,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1070,
-        "y": 160,
+        "x": 1090,
+        "y": 240,
         "wires": [
             [
                 "2a40f09a09e9863f"
@@ -1166,8 +1181,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1270,
-        "y": 320,
+        "x": 1290,
+        "y": 400,
         "wires": [
             [
                 "23e428179924a42c"
@@ -1190,8 +1205,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 2080,
-        "y": 140,
+        "x": 2100,
+        "y": 220,
         "wires": [
             [
                 "4b554fb5f150a3f4"
@@ -1204,8 +1219,8 @@
         "z": "9ffaf4a50f363f22",
         "name": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
         "info": "wget \"http://192.168.1.33/win&A=20&R=255&G=255&B=255\"",
-        "x": 2160,
-        "y": 80,
+        "x": 2360,
+        "y": 180,
         "wires": []
     },
     {
@@ -1221,8 +1236,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 2470,
-        "y": 180,
+        "x": 2490,
+        "y": 260,
         "wires": []
     },
     {
@@ -1244,8 +1259,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1070,
-        "y": 140,
+        "x": 1090,
+        "y": 220,
         "wires": [
             [
                 "64a06e4d992eae97"
@@ -1258,8 +1273,8 @@
         "z": "9ffaf4a50f363f22",
         "name": "Parse home commands: onState, brightness, color, temperature to commands understandable by WLED",
         "info": "",
-        "x": 1070,
-        "y": 80,
+        "x": 1090,
+        "y": 160,
         "wires": []
     },
     {
@@ -1274,8 +1289,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1650,
-        "y": 140,
+        "x": 1670,
+        "y": 220,
         "wires": [
             [
                 "18e4d12257d68266"
@@ -1298,8 +1313,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 2100,
-        "y": 180,
+        "x": 2120,
+        "y": 260,
         "wires": [
             [
                 "4b554fb5f150a3f4"
@@ -1318,8 +1333,8 @@
         "round": true,
         "property": "brightness",
         "name": "brightness 0-100 to 0-255",
-        "x": 1670,
-        "y": 180,
+        "x": 1690,
+        "y": 260,
         "wires": [
             [
                 "6f0de4d8750d3505"
@@ -1342,8 +1357,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 2080,
-        "y": 220,
+        "x": 2100,
+        "y": 300,
         "wires": [
             [
                 "4b554fb5f150a3f4"
@@ -1363,18 +1378,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 2410,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "e36a1d7188cf1b50",
-        "type": "comment",
-        "z": "9ffaf4a50f363f22",
-        "name": "device name -> wled address",
-        "info": "http://192.168.1.41/ master\nhttp://192.168.1.42/ shelf-down\nhttp://192.168.1.33/ desk\nhttp://192.168.1.59/ shlf up",
-        "x": 420,
-        "y": 160,
+        "x": 2430,
+        "y": 340,
         "wires": []
     },
     {
@@ -1390,8 +1395,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 2430,
-        "y": 220,
+        "x": 2450,
+        "y": 300,
         "wires": []
     },
     {
@@ -1405,8 +1410,8 @@
         "syntax": "mustache",
         "template": "{{payload.params.on}}",
         "output": "str",
-        "x": 260,
-        "y": 980,
+        "x": 280,
+        "y": 1060,
         "wires": [
             [
                 "91ee46c6c6984204"
@@ -1429,8 +1434,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 790,
-        "y": 980,
+        "x": 810,
+        "y": 1060,
         "wires": [
             [
                 "1c41eecd124da8f5",
@@ -1442,10 +1447,10 @@
         "id": "ec34f3a72def4509",
         "type": "comment",
         "z": "9ffaf4a50f363f22",
-        "name": "http://192.168.1.77/api?p=off",
+        "name": "PC on/off",
         "info": "http://192.168.1.77/api?p=off",
-        "x": 780,
-        "y": 900,
+        "x": 160,
+        "y": 940,
         "wires": []
     },
     {
@@ -1453,7 +1458,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "status",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": false,
@@ -1461,8 +1466,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
-        "y": 960,
+        "x": 1020,
+        "y": 1040,
         "wires": []
     },
     {
@@ -1470,7 +1475,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "responseUrlstring",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": false,
@@ -1478,8 +1483,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 1000,
+        "x": 1060,
+        "y": 1080,
         "wires": []
     },
     {
@@ -1501,8 +1506,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 1000,
+        "x": 600,
+        "y": 1080,
         "wires": [
             [
                 "2e596abc3ea67cf3"
@@ -1531,8 +1536,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 410,
-        "y": 980,
+        "x": 430,
+        "y": 1060,
         "wires": [
             [
                 "819b87fa28bba4c5"
@@ -1561,8 +1566,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 960,
+        "x": 600,
+        "y": 1040,
         "wires": [
             [
                 "2e596abc3ea67cf3"
@@ -1583,7 +1588,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 330,
-        "y": 1260,
+        "y": 1220,
         "wires": []
     },
     {
@@ -1605,8 +1610,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1430,
-        "y": 620,
+        "x": 1450,
+        "y": 700,
         "wires": [
             [
                 "8af80de7fa52e249"
@@ -1621,10 +1626,11 @@
         "scope": null,
         "uncaught": false,
         "x": 140,
-        "y": 1260,
+        "y": 1220,
         "wires": [
             [
-                "cd75ec966815c4c1"
+                "cd75ec966815c4c1",
+                "dc67b929d4ac7adc"
             ]
         ]
     },
@@ -1639,8 +1645,8 @@
         "syntax": "mustache",
         "template": "{\n    \"seg\": {\n        \"col\": [\n            [{{colorArray}}]\n        ]\n    }\n}",
         "output": "str",
-        "x": 1250,
-        "y": 620,
+        "x": 1270,
+        "y": 700,
         "wires": [
             [
                 "51da9d9ef4872525"
@@ -1659,8 +1665,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1090,
-        "y": 620,
+        "x": 1110,
+        "y": 700,
         "wires": [
             [
                 "799cfde25e88915e"
@@ -1694,8 +1700,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 640,
-        "y": 520,
+        "x": 660,
+        "y": 600,
         "wires": [
             [
                 "89be4982171e0fe5"
@@ -1724,8 +1730,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 940,
-        "y": 440,
+        "x": 960,
+        "y": 520,
         "wires": [
             []
         ]
@@ -1742,8 +1748,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 440,
+        "x": 830,
+        "y": 520,
         "wires": [
             [
                 "8de734d93914b78d"
@@ -1770,8 +1776,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 320,
+        "x": 570,
+        "y": 400,
         "wires": [
             [
                 "b3c5cda6a292e8b0"
@@ -1790,112 +1796,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1510,
-        "y": 320,
+        "x": 1530,
+        "y": 400,
         "wires": [
             [
                 "2f3634a5c980132c"
             ]
-        ]
-    },
-    {
-        "id": "6bc30fc43726c6ef",
-        "type": "http request",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.1.77/api",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 290,
-        "y": 1080,
-        "wires": [
-            [
-                "ad75c85cb9898c5e",
-                "bc247d184e4e8b73",
-                "1c41eecd124da8f5"
-            ]
-        ]
-    },
-    {
-        "id": "60ecc9f5144fede4",
-        "type": "inject",
-        "z": "9ffaf4a50f363f22",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 1080,
-        "wires": [
-            [
-                "6bc30fc43726c6ef"
-            ]
-        ]
-    },
-    {
-        "id": "ad75c85cb9898c5e",
-        "type": "debug",
-        "z": "9ffaf4a50f363f22",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 1140,
-        "wires": []
-    },
-    {
-        "id": "bc247d184e4e8b73",
-        "type": "switch",
-        "z": "9ffaf4a50f363f22",
-        "name": "pc online?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "\"/api: PC status: Online\"",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "\"/api: PC status: Offline\"",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 1080,
-        "wires": [
-            [],
-            []
         ]
     },
     {
@@ -1934,8 +1840,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 810,
-        "y": 520,
+        "x": 830,
+        "y": 600,
         "wires": [
             [
                 "e7302ee6f5d9bcd6"
@@ -1967,8 +1873,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1580,
-        "y": 620,
+        "x": 1600,
+        "y": 700,
         "wires": [
             []
         ]
@@ -1978,8 +1884,8 @@
         "type": "subflow:5d87c4a6c424c840",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 940,
-        "y": 500,
+        "x": 960,
+        "y": 580,
         "wires": [
             []
         ]
@@ -1989,8 +1895,8 @@
         "type": "subflow:5d87c4a6c424c840",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 940,
-        "y": 520,
+        "x": 960,
+        "y": 600,
         "wires": [
             [
                 "a9153339ee11b0e5"
@@ -2002,8 +1908,8 @@
         "type": "subflow:5d87c4a6c424c840",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 940,
-        "y": 540,
+        "x": 960,
+        "y": 620,
         "wires": [
             [
                 "6fc42eb20bfd0d6a"
@@ -2015,8 +1921,8 @@
         "type": "subflow:5d87c4a6c424c840",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 940,
-        "y": 560,
+        "x": 960,
+        "y": 640,
         "wires": [
             [
                 "3ac8f48b90afcc65"
@@ -2045,8 +1951,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 880,
-        "y": 640,
+        "x": 900,
+        "y": 720,
         "wires": [
             [
                 "f515a6706e07e594"
@@ -2061,8 +1967,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1070,
-        "y": 520,
+        "x": 1090,
+        "y": 600,
         "wires": [
             []
         ]
@@ -2072,8 +1978,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1070,
-        "y": 540,
+        "x": 1090,
+        "y": 620,
         "wires": [
             [
                 "0741f7c947d09f6a"
@@ -2085,8 +1991,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1190,
-        "y": 540,
+        "x": 1210,
+        "y": 620,
         "wires": [
             []
         ]
@@ -2096,8 +2002,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1070,
-        "y": 560,
+        "x": 1090,
+        "y": 640,
         "wires": [
             [
                 "b72716844b793ad2"
@@ -2109,8 +2015,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1190,
-        "y": 560,
+        "x": 1210,
+        "y": 640,
         "wires": [
             [
                 "3d2b84e815cd9a04"
@@ -2122,8 +2028,8 @@
         "type": "subflow:27bb0e5cddfa934e",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1310,
-        "y": 560,
+        "x": 1330,
+        "y": 640,
         "wires": [
             []
         ]
@@ -2140,8 +2046,8 @@
         "round": true,
         "property": "payload.params.color.temperature",
         "name": "",
-        "x": 1090,
-        "y": 740,
+        "x": 1110,
+        "y": 820,
         "wires": [
             [
                 "8adc57dc89421eb0",
@@ -2186,8 +2092,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 1210,
-        "y": 740,
+        "x": 1230,
+        "y": 820,
         "wires": [
             [
                 "8967e17b3fb8216e"
@@ -2211,8 +2117,8 @@
         "type": "subflow:e51f69071017f997",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1350,
-        "y": 780,
+        "x": 1370,
+        "y": 860,
         "wires": [
             []
         ]
@@ -2222,8 +2128,8 @@
         "type": "subflow:52afd969a1cf0ffc",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1360,
-        "y": 760,
+        "x": 1380,
+        "y": 840,
         "wires": [
             []
         ]
@@ -2233,8 +2139,8 @@
         "type": "subflow:f346ac36acd43e99",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1350,
-        "y": 740,
+        "x": 1370,
+        "y": 820,
         "wires": [
             []
         ]
@@ -2244,8 +2150,8 @@
         "type": "subflow:eb65f773a621ccc4",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1350,
-        "y": 720,
+        "x": 1370,
+        "y": 800,
         "wires": [
             []
         ]
@@ -2255,8 +2161,8 @@
         "type": "subflow:cc494343ad5f7d2c",
         "z": "9ffaf4a50f363f22",
         "name": "",
-        "x": 1350,
-        "y": 700,
+        "x": 1370,
+        "y": 780,
         "wires": [
             []
         ]
@@ -2267,8 +2173,8 @@
         "z": "9ffaf4a50f363f22",
         "name": "temperature",
         "info": "",
-        "x": 1270,
-        "y": 680,
+        "x": 1290,
+        "y": 760,
         "wires": []
     },
     {
@@ -2284,8 +2190,8 @@
         "targetType": "msg",
         "statusVal": "payload.params.color.temperature",
         "statusType": "msg",
-        "x": 1230,
-        "y": 820,
+        "x": 1250,
+        "y": 900,
         "wires": []
     },
     {
@@ -2299,8 +2205,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 1560,
+        "x": 170,
+        "y": 1640,
         "wires": [
             [
                 "7789e0962ef366c1"
@@ -2319,8 +2225,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 470,
-        "y": 1520,
+        "x": 490,
+        "y": 1600,
         "wires": [
             [
                 "c630370eba53b45e",
@@ -2341,7 +2247,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "stdout",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -2349,8 +2255,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 790,
-        "y": 1480,
+        "x": 810,
+        "y": 1560,
         "wires": []
     },
     {
@@ -2358,7 +2264,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "stderr",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -2366,8 +2272,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 790,
-        "y": 1440,
+        "x": 810,
+        "y": 1520,
         "wires": []
     },
     {
@@ -2382,8 +2288,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 1620,
+        "x": 820,
+        "y": 1700,
         "wires": [
             [
                 "7edb7dbf1295f30a"
@@ -2402,8 +2308,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 1580,
+        "x": 820,
+        "y": 1660,
         "wires": [
             [
                 "0cce82166a2f2dcc"
@@ -2422,8 +2328,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 1540,
+        "x": 830,
+        "y": 1620,
         "wires": [
             [
                 "50be8f982d4e3247"
@@ -2434,10 +2340,10 @@
         "id": "b44093bf4d7b577e",
         "type": "comment",
         "z": "9ffaf4a50f363f22",
-        "name": "executes /home/gheets-api-appendRow/index.js",
-        "info": "e",
-        "x": 260,
-        "y": 1400,
+        "name": "Worktime log - executes /home/gheets-api-appendRow/index.js",
+        "info": "",
+        "x": 310,
+        "y": 1480,
         "wires": []
     },
     {
@@ -2452,8 +2358,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 1940,
+        "x": 540,
+        "y": 1980,
         "wires": [
             [
                 "e26a136bcd1036f4"
@@ -2472,8 +2378,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 1900,
+        "x": 540,
+        "y": 1940,
         "wires": [
             [
                 "1f3e31c406d0104e"
@@ -2492,8 +2398,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 1860,
+        "x": 550,
+        "y": 1900,
         "wires": [
             [
                 "196af548e29ff66c"
@@ -2506,8 +2412,8 @@
         "z": "9ffaf4a50f363f22",
         "name": "execute commands, examples in label",
         "info": " example cmd: cd gsheets-append-row && ls -l; \n Example 2: cd gsheets-append-row && node -index.js \nIt always starts in home dir so you have to glue them together with &&\n\nTo update sheets code:\ncd gsheets-append-row && git pull\n",
-        "x": 210,
-        "y": 1760,
+        "x": 230,
+        "y": 1820,
         "wires": []
     },
     {
@@ -2522,8 +2428,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 310,
-        "y": 1900,
+        "x": 330,
+        "y": 1940,
         "wires": [
             [
                 "3e58178715e9cc40",
@@ -2552,8 +2458,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 310,
-        "y": 1960,
+        "x": 330,
+        "y": 2000,
         "wires": []
     },
     {
@@ -2568,8 +2474,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 310,
-        "y": 1840,
+        "x": 330,
+        "y": 1880,
         "wires": [
             [
                 "5bbf67e6bba3549d"
@@ -2591,8 +2497,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 510,
-        "y": 1980,
+        "x": 530,
+        "y": 2020,
         "wires": []
     },
     {
@@ -2608,8 +2514,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 460,
-        "y": 1560,
+        "x": 480,
+        "y": 1640,
         "wires": [
             [],
             [],
@@ -2627,8 +2533,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 140,
-        "y": 1640,
+        "x": 160,
+        "y": 1720,
         "wires": [
             [
                 "e26ffa2137bb7684"
@@ -2647,8 +2553,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 440,
-        "y": 1640,
+        "x": 460,
+        "y": 1720,
         "wires": [
             [
                 "9e343e0c2c4f6a87"
@@ -2679,8 +2585,8 @@
         "sendOnBlur": false,
         "className": "",
         "topicType": "msg",
-        "x": 110,
-        "y": 1860,
+        "x": 130,
+        "y": 1880,
         "wires": [
             [
                 "a5e7b7dc1d191e88",
@@ -2713,8 +2619,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 1470,
-        "y": 220,
+        "x": 1490,
+        "y": 300,
         "wires": [
             []
         ]
@@ -2736,8 +2642,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 950,
-        "y": 220,
+        "x": 970,
+        "y": 300,
         "wires": []
     },
     {
@@ -2757,8 +2663,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 950,
-        "y": 240,
+        "x": 970,
+        "y": 320,
         "wires": []
     },
     {
@@ -2778,8 +2684,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1190,
-        "y": 240,
+        "x": 1210,
+        "y": 320,
         "wires": []
     },
     {
@@ -2799,8 +2705,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1200,
-        "y": 220,
+        "x": 1220,
+        "y": 300,
         "wires": []
     },
     {
@@ -2820,8 +2726,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1460,
-        "y": 200,
+        "x": 1480,
+        "y": 280,
         "wires": []
     },
     {
@@ -2841,8 +2747,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 1460,
-        "y": 240,
+        "x": 1480,
+        "y": 320,
         "wires": []
     },
     {
@@ -2862,8 +2768,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 2390,
-        "y": 120,
+        "x": 2410,
+        "y": 200,
         "wires": []
     },
     {
@@ -2883,8 +2789,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 550,
-        "y": 1820,
+        "x": 570,
+        "y": 1860,
         "wires": []
     },
     {
@@ -2902,8 +2808,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 960,
-        "y": 1540,
+        "x": 980,
+        "y": 1620,
         "wires": [
             []
         ]
@@ -2923,8 +2829,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 960,
-        "y": 1580,
+        "x": 980,
+        "y": 1660,
         "wires": [
             []
         ]
@@ -2944,8 +2850,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 960,
-        "y": 1620,
+        "x": 980,
+        "y": 1700,
         "wires": [
             []
         ]
@@ -2965,8 +2871,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 680,
-        "y": 1860,
+        "x": 700,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -2986,8 +2892,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 680,
-        "y": 1900,
+        "x": 700,
+        "y": 1940,
         "wires": [
             []
         ]
@@ -3007,8 +2913,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 680,
-        "y": 1940,
+        "x": 700,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -3022,8 +2928,8 @@
         "acknowledge": true,
         "name": "wled-desk",
         "topic": "desk",
-        "x": 140,
-        "y": 160,
+        "x": 160,
+        "y": 240,
         "wires": [
             [
                 "f6b62a21c7ac773f"
@@ -3039,8 +2945,8 @@
         "acknowledge": true,
         "name": "wled-up",
         "topic": "",
-        "x": 130,
-        "y": 220,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
                 "f6b62a21c7ac773f"
@@ -3056,8 +2962,8 @@
         "acknowledge": true,
         "name": "wled-down",
         "topic": "",
-        "x": 140,
-        "y": 280,
+        "x": 160,
+        "y": 360,
         "wires": [
             [
                 "f6b62a21c7ac773f"
@@ -3073,30 +2979,12 @@
         "acknowledge": true,
         "name": "pc",
         "topic": "",
-        "x": 130,
-        "y": 980,
+        "x": 150,
+        "y": 1060,
         "wires": [
             [
                 "1a239aca8279508e",
                 "6a26fbe7fa4b9035"
-            ]
-        ]
-    },
-    {
-        "id": "2e37ae7f161d44bf",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
-        "conf": "caa4d98949c7e701",
-        "device": "32649",
-        "acknowledge": true,
-        "name": "ambient",
-        "topic": "",
-        "x": 130,
-        "y": 1140,
-        "wires": [
-            [
-                "f9f5222d3307d3a2"
             ]
         ]
     },
@@ -3109,8 +2997,8 @@
         "acknowledge": true,
         "name": "wled-ir",
         "topic": "",
-        "x": 130,
-        "y": 340,
+        "x": 150,
+        "y": 420,
         "wires": [
             [
                 "f6b62a21c7ac773f"
@@ -3127,8 +3015,8 @@
         "acknowledge": true,
         "name": "wled-short",
         "topic": "",
-        "x": 140,
-        "y": 400,
+        "x": 160,
+        "y": 480,
         "wires": [
             [
                 "f6b62a21c7ac773f"
@@ -3145,7 +3033,7 @@
         "name": "log-worktime",
         "topic": "",
         "x": 150,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "7789e0962ef366c1"
@@ -3166,38 +3054,416 @@
         "effectFrequency": "0.25",
         "effectCycles": "1",
         "effectColor": "#ffffff",
+        "x": 340,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc67b929d4ac7adc",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "turn on ghome status",
+        "func": "// if (!msg.payload) {\n// msg.payload = {\n//     command: \"action.devices.commands.OnOff\",\n//     params: {\n//         on: true\n//     }\n// };\n\n// delete msg._confId;\n\n// return msg;\n// } else {\n//     return;\n// }\n\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 1300,
+        "wires": [
+            [
+                "243d4eb545aa2a29"
+            ]
+        ]
+    },
+    {
+        "id": "243d4eb545aa2a29",
+        "type": "rbe",
+        "z": "9ffaf4a50f363f22",
+        "name": "only when state changed",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 410,
+        "y": 1300,
+        "wires": [
+            [
+                "f333486646b22e35",
+                "d9addd482c83c4b3"
+            ]
+        ]
+    },
+    {
+        "id": "f333486646b22e35",
+        "type": "google-home-response",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "34271",
+        "name": "Error",
+        "x": 590,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "d9addd482c83c4b3",
+        "type": "delay",
+        "z": "9ffaf4a50f363f22",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 140,
+        "y": 1380,
+        "wires": [
+            [
+                "4cb09d5f9a46cb93"
+            ]
+        ]
+    },
+    {
+        "id": "4cb09d5f9a46cb93",
+        "type": "function",
+        "z": "9ffaf4a50f363f22",
+        "name": "turn off ghome status",
+        "func": "// if (!msg.payload) {\n// msg.payload = {\n//     command: \"action.devices.commands.OnOff\",\n//     params: {\n//         on: true\n//     }\n// };\n\n// delete msg._confId;\n\n// return msg;\n// } else {\n//     return;\n// }\n\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 320,
-        "y": 920,
+        "y": 1380,
         "wires": [
-            []
+            [
+                "4b6bb69a4549e62d"
+            ]
         ]
     },
     {
-        "id": "f1bfb2ee0f608949",
-        "type": "wled-notification",
+        "id": "4b6bb69a4549e62d",
+        "type": "rbe",
         "z": "9ffaf4a50f363f22",
-        "d": true,
-        "name": "WLED pod polka - notify",
-        "host": "192.168.1.29",
-        "port": "21324",
-        "fps": "30",
-        "ledStart": "0",
-        "ledCount": "64",
-        "effect": "blink",
-        "effectFrequency": "0.25",
-        "effectCycles": "1",
-        "effectColor": "#ffffff",
-        "x": 370,
-        "y": 740,
+        "name": "only when state changed",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 550,
+        "y": 1380,
         "wires": [
-            []
+            [
+                "b00072a6e627e542"
+            ]
         ]
     },
     {
-        "id": "51aadbc47a4284c9",
+        "id": "b00072a6e627e542",
+        "type": "google-home-response",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "34271",
+        "name": "Error",
+        "x": 730,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "1e64ebb1c957f856",
+        "type": "link out",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled cmd out ->",
+        "mode": "link",
+        "links": [
+            "af86b1eedfbe7094"
+        ],
+        "x": 895,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c44583d56bffa0f1",
+        "type": "comment",
+        "z": "9ffaf4a50f363f22",
+        "name": "Signal error via Error \"switch\"",
+        "info": "",
+        "x": 200,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "6bc30fc43726c6ef",
+        "type": "http request",
+        "z": "9a148c9dca835f17",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.77/api",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "bc247d184e4e8b73",
+                "746dee14d9462268"
+            ]
+        ]
+    },
+    {
+        "id": "60ecc9f5144fede4",
         "type": "inject",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
+        "z": "9a148c9dca835f17",
+        "name": "trigger interval",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "6bc30fc43726c6ef"
+            ]
+        ]
+    },
+    {
+        "id": "bc247d184e4e8b73",
+        "type": "switch",
+        "z": "9a148c9dca835f17",
+        "name": "pc online?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/api: PC status: Online",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/api: PC status: Offline",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "eb17e48e54b5651a"
+            ],
+            [
+                "9bf342878f6ed31f"
+            ]
+        ]
+    },
+    {
+        "id": "9bf342878f6ed31f",
+        "type": "function",
+        "z": "9a148c9dca835f17",
+        "name": "turn off ghome status",
+        "func": "msg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 380,
+        "wires": [
+            [
+                "2bf2ad5631ef3774",
+                "d497134c23c50366"
+            ]
+        ]
+    },
+    {
+        "id": "eb17e48e54b5651a",
+        "type": "function",
+        "z": "9a148c9dca835f17",
+        "name": "turn on ghome status",
+        "func": "// if (!msg.payload) {\n// msg.payload = {\n//     command: \"action.devices.commands.OnOff\",\n//     params: {\n//         on: true\n//     }\n// };\n\n// delete msg._confId;\n\n// return msg;\n// } else {\n//     return;\n// }\n\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 340,
+        "wires": [
+            [
+                "2bf2ad5631ef3774",
+                "d497134c23c50366"
+            ]
+        ]
+    },
+    {
+        "id": "37d798e173494fe8",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "32650",
+        "name": "PC",
+        "x": 1130,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2bf2ad5631ef3774",
+        "type": "rbe",
+        "z": "9a148c9dca835f17",
+        "name": "only when state changed",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 950,
+        "y": 340,
+        "wires": [
+            [
+                "37d798e173494fe8"
+            ]
+        ]
+    },
+    {
+        "id": "d497134c23c50366",
+        "type": "debug",
+        "z": "9a148c9dca835f17",
+        "name": "Update PC status SENT",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 950,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2f8a861a65ba49ae",
+        "type": "websocket in",
+        "z": "9a148c9dca835f17",
+        "name": "websocket motion sensor",
+        "server": "",
+        "client": "ef513e599ee752c3",
+        "x": 170,
+        "y": 1420,
+        "wires": [
+            [
+                "60e42f67c7f99220"
+            ]
+        ]
+    },
+    {
+        "id": "4ec18958a59637bd",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "34231",
+        "name": "motion-sensor",
+        "x": 720,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "60e42f67c7f99220",
+        "type": "function",
+        "z": "9a148c9dca835f17",
+        "name": "set params for g home",
+        "func": "\nlet motionActive = (msg.payload == \"1\") ? true : false;\n\nmsg.payload = {\n    params:\n        { on: motionActive }\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1420,
+        "wires": [
+            [
+                "4ec18958a59637bd"
+            ]
+        ]
+    },
+    {
+        "id": "b3b1af0423c88dca",
+        "type": "comment",
+        "z": "9a148c9dca835f17",
+        "name": "Set sensor para example:",
+        "info": "",
+        "x": 170,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "4386154f5919a20f",
+        "type": "function",
+        "z": "9a148c9dca835f17",
+        "name": "turn on device g home",
+        "func": "\nlet motionActive = (msg.payload == \"1\") ? true : false;\n\nmsg.payload = {\n    params:\n        { on: motionActive }\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1340,
+        "wires": [
+            [
+                "a933cac456182309"
+            ]
+        ]
+    },
+    {
+        "id": "30323263258d4ab8",
+        "type": "inject",
+        "z": "9a148c9dca835f17",
         "name": "",
         "props": [
             {
@@ -3215,19 +3481,45 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 740,
+        "x": 160,
+        "y": 1340,
         "wires": [
             [
-                "f1bfb2ee0f608949"
+                "4386154f5919a20f"
             ]
         ]
     },
     {
-        "id": "6898f87948e8711e",
+        "id": "a933cac456182309",
         "type": "debug",
-        "z": "9ffaf4a50f363f22",
+        "z": "9a148c9dca835f17",
         "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "5155c730fa102c90",
+        "type": "comment",
+        "z": "9a148c9dca835f17",
+        "name": "PC status refresh",
+        "info": "",
+        "x": 140,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "746dee14d9462268",
+        "type": "debug",
+        "z": "9a148c9dca835f17",
+        "name": "pc status http request",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -3236,24 +3528,150 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 340,
-        "y": 600,
+        "x": 540,
+        "y": 460,
         "wires": []
     },
     {
-        "id": "2f8a861a65ba49ae",
-        "type": "websocket in",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
-        "name": "websocket motion sensor",
-        "server": "",
-        "client": "ef513e599ee752c3",
-        "x": 130,
-        "y": 600,
+        "id": "31350dfb4e9d8271",
+        "type": "comment",
+        "z": "9a148c9dca835f17",
+        "name": "Refresh WLED status",
+        "info": "",
+        "x": 220,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "af86b1eedfbe7094",
+        "type": "link in",
+        "z": "9a148c9dca835f17",
+        "name": "-> ghome command",
+        "links": [
+            "1e64ebb1c957f856"
+        ],
+        "x": 135,
+        "y": 640,
         "wires": [
             [
-                "6898f87948e8711e",
-                "6a26fbe7fa4b9035"
+                "fde24491506b840a",
+                "cfc3856dfbff60ae"
+            ]
+        ]
+    },
+    {
+        "id": "fde24491506b840a",
+        "type": "debug",
+        "z": "9a148c9dca835f17",
+        "name": "pc status http request",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 280,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "19d0b69f93b15902",
+        "type": "function",
+        "z": "9a148c9dca835f17",
+        "name": "process into ghome status update",
+        "func": "// node.warn(msg);\n// node.error(msg);\n\n// get command from payload, if it's brightness or color\n// set device status to on\nswitch (msg.payload.command) {\n    case \"action.devices.commands.BrightnessAbsolute\":\n        node.warn(\"BrightnessAbsolute\");\n        //set payload to onOff=true status\n        msg.payload = {\n            command: \"action.devices.commands.OnOff\",\n            params: {\n                online: true,\n                on: true\n            }\n        };\n\n        break;\n    case \"action.devices.commands.ColorAbsolute\":\n        node.warn(\"ColorAbsolute\");\n        msg.payload = {\n            command: \"action.devices.commands.OnOff\",\n            params: {\n                online: true,\n                on: true\n            }\n        };\n        break;\n        \n}\n\n\n// get device ip\n// let deviceIP = msg.requestAddress;\n// node.warn()\n\n\ndelete msg._confId;\n\n// node.error(\"output msg\");\n// node.error(msg);\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "cafd3fca415f4999"
+            ]
+        ]
+    },
+    {
+        "id": "f627770d794b52d2",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "32645",
+        "name": "wled-desk",
+        "x": 800,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "08fb6c9b87e0ba1a",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "32646",
+        "name": "wled-up",
+        "x": 800,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "0edc8d6dbd0d8751",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "32647",
+        "name": "wled-down",
+        "x": 810,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "77d45ef6a21eaa7a",
+        "type": "google-home-response",
+        "z": "9a148c9dca835f17",
+        "conf": "caa4d98949c7e701",
+        "device": "32817",
+        "name": "wled-ir",
+        "x": 790,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "4be2d2cdd7fdded3",
+        "type": "comment",
+        "z": "9a148c9dca835f17",
+        "name": "delay because sometimes it would get overwritten by \"auto response\" code, not under my control",
+        "info": "",
+        "x": 690,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cfc3856dfbff60ae",
+        "type": "delay",
+        "z": "9a148c9dca835f17",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 660,
+        "wires": [
+            [
+                "19d0b69f93b15902"
             ]
         ]
     },
@@ -3538,6 +3956,536 @@
         "info": "",
         "x": 340,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cd2185eff674c0c9",
+        "type": "comment",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "refresh status, turn device on when brightness > 0 or color was choosen",
+        "info": "",
+        "x": 370,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "911dd60e71233ac6",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn off",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1180,
+        "wires": [
+            [
+                "3a2a272cbceb8b6e"
+            ]
+        ]
+    },
+    {
+        "id": "3a2a272cbceb8b6e",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32645",
+        "name": "wled-desk",
+        "x": 460,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "056589685e36f9e6",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn on",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1160,
+        "wires": [
+            [
+                "3a2a272cbceb8b6e"
+            ]
+        ]
+    },
+    {
+        "id": "f6c788cba0805379",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn off",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1240,
+        "wires": [
+            [
+                "bc82fcd5fc67d546"
+            ]
+        ]
+    },
+    {
+        "id": "bc82fcd5fc67d546",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32646",
+        "name": "wled-up",
+        "x": 460,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "64bd6e81c512dc5b",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn on",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1220,
+        "wires": [
+            [
+                "bc82fcd5fc67d546"
+            ]
+        ]
+    },
+    {
+        "id": "16950aaa06f31d4d",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn off",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1300,
+        "wires": [
+            [
+                "fe04f5e554946e8f"
+            ]
+        ]
+    },
+    {
+        "id": "fe04f5e554946e8f",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32647",
+        "name": "wled-down",
+        "x": 470,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7918c8f512cbc571",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn on",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1280,
+        "wires": [
+            [
+                "fe04f5e554946e8f"
+            ]
+        ]
+    },
+    {
+        "id": "2a9f2a8da12827b8",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn off",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1360,
+        "wires": [
+            [
+                "8b54195b8d36e085"
+            ]
+        ]
+    },
+    {
+        "id": "8b54195b8d36e085",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32817",
+        "name": "wled-ir",
+        "x": 450,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "8fa1035b95af9f3f",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn on",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1340,
+        "wires": [
+            [
+                "8b54195b8d36e085"
+            ]
+        ]
+    },
+    {
+        "id": "50a858fe891fdf1e",
+        "type": "switch",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wled-down",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-desk",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-ir",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 130,
+        "y": 1240,
+        "wires": [
+            [
+                "7918c8f512cbc571"
+            ],
+            [
+                "64bd6e81c512dc5b"
+            ],
+            [
+                "056589685e36f9e6"
+            ],
+            [
+                "8fa1035b95af9f3f"
+            ]
+        ]
+    },
+    {
+        "id": "c477b4a908301ba4",
+        "type": "switch",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1240,
+        "wires": [
+            [],
+            [
+                "5352ede569bc61d9"
+            ]
+        ]
+    },
+    {
+        "id": "5352ede569bc61d9",
+        "type": "function",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "turn off",
+        "func": "\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 1240,
+        "wires": [
+            [
+                "58e7e4fee7c36f15"
+            ]
+        ]
+    },
+    {
+        "id": "58e7e4fee7c36f15",
+        "type": "switch",
+        "z": "ca8d3df2f1a7e9a9",
+        "name": "",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wled-down",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-desk",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-ir",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 970,
+        "y": 1240,
+        "wires": [
+            [
+                "525cdf25b85291e7"
+            ],
+            [
+                "cd2a614e8c5c67f8"
+            ],
+            [
+                "ae2576326fd36760"
+            ],
+            [
+                "d25a4c1a8f624c88"
+            ]
+        ]
+    },
+    {
+        "id": "ae2576326fd36760",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32645",
+        "name": "wled-desk",
+        "x": 1160,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "cd2a614e8c5c67f8",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32646",
+        "name": "wled-up",
+        "x": 1160,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "525cdf25b85291e7",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32647",
+        "name": "wled-down",
+        "x": 1170,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "d25a4c1a8f624c88",
+        "type": "google-home-response",
+        "z": "ca8d3df2f1a7e9a9",
+        "conf": "caa4d98949c7e701",
+        "device": "32817",
+        "name": "wled-ir",
+        "x": 1150,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "1533b906c6878a61",
+        "type": "function",
+        "z": "8b6530bcd77a42d0",
+        "name": "turn off",
+        "func": "if (!msg.payload) {\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: false\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n} else {\n    return;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "83549d88905ef9b1",
+                "a9af3070bd598c0b"
+            ]
+        ]
+    },
+    {
+        "id": "a9af3070bd598c0b",
+        "type": "debug",
+        "z": "8b6530bcd77a42d0",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 390,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "83549d88905ef9b1",
+        "type": "google-home-response",
+        "z": "8b6530bcd77a42d0",
+        "conf": "caa4d98949c7e701",
+        "device": "32645",
+        "name": "wled-desk",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cbfc03a487ea6d36",
+        "type": "inject",
+        "z": "8b6530bcd77a42d0",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "1533b906c6878a61"
+            ]
+        ]
+    },
+    {
+        "id": "8da5991a38f56e8b",
+        "type": "function",
+        "z": "8b6530bcd77a42d0",
+        "name": "turn on",
+        "func": "if (!msg.payload) {\nmsg.payload = {\n    command: \"action.devices.commands.OnOff\",\n    params: {\n        on: true\n    }\n};\n\ndelete msg._confId;\n\nreturn msg;\n} else {\n    return;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "a9af3070bd598c0b",
+                "83549d88905ef9b1"
+            ]
+        ]
+    },
+    {
+        "id": "cee785b7c3b74e4a",
+        "type": "inject",
+        "z": "8b6530bcd77a42d0",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "8da5991a38f56e8b"
+            ]
+        ]
+    },
+    {
+        "id": "b98ee7c245449679",
+        "type": "comment",
+        "z": "8b6530bcd77a42d0",
+        "name": "Works even with wled-desk with \"auto acknowledge\" on",
+        "info": "",
+        "x": 740,
+        "y": 100,
         "wires": []
     }
 ]
