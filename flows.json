@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "4ae249d09029b7b6",
+        "type": "tab",
+        "label": "Motion sensor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ca8d3df2f1a7e9a9",
         "type": "tab",
         "label": "misc",
@@ -375,8 +383,8 @@
         "id": "cafd3fca415f4999",
         "type": "junction",
         "z": "9a148c9dca835f17",
-        "x": 660,
-        "y": 660,
+        "x": 600,
+        "y": 800,
         "wires": [
             [
                 "f627770d794b52d2",
@@ -1591,7 +1599,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "Catch everything else",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": true,
         "tostatus": true,
@@ -1599,8 +1607,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 410,
-        "y": 1220,
+        "x": 830,
+        "y": 1160,
         "wires": []
     },
     {
@@ -1637,8 +1645,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 220,
-        "y": 1220,
+        "x": 580,
+        "y": 1160,
         "wires": [
             [
                 "cd75ec966815c4c1",
@@ -2268,8 +2276,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 690,
-        "y": 1460,
+        "x": 730,
+        "y": 1520,
         "wires": []
     },
     {
@@ -2285,8 +2293,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 690,
-        "y": 1440,
+        "x": 730,
+        "y": 1500,
         "wires": []
     },
     {
@@ -2964,27 +2972,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 1300,
-        "wires": [
-            [
-                "243d4eb545aa2a29"
-            ]
-        ]
-    },
-    {
-        "id": "243d4eb545aa2a29",
-        "type": "rbe",
-        "z": "9ffaf4a50f363f22",
-        "name": "only when state changed",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 490,
+        "x": 620,
         "y": 1300,
         "wires": [
             [
@@ -3000,8 +2988,8 @@
         "conf": "caa4d98949c7e701",
         "device": "34271",
         "name": "Error",
-        "x": 670,
-        "y": 1300,
+        "x": 810,
+        "y": 1240,
         "wires": []
     },
     {
@@ -3010,7 +2998,7 @@
         "z": "9ffaf4a50f363f22",
         "name": "",
         "pauseType": "delay",
-        "timeout": "5",
+        "timeout": "20",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -3021,8 +3009,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 220,
-        "y": 1380,
+        "x": 820,
+        "y": 1300,
         "wires": [
             [
                 "4cb09d5f9a46cb93"
@@ -3041,28 +3029,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 1380,
-        "wires": [
-            [
-                "4b6bb69a4549e62d"
-            ]
-        ]
-    },
-    {
-        "id": "4b6bb69a4549e62d",
-        "type": "rbe",
-        "z": "9ffaf4a50f363f22",
-        "name": "only when state changed",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 630,
-        "y": 1380,
+        "x": 1020,
+        "y": 1300,
         "wires": [
             [
                 "b00072a6e627e542"
@@ -3076,8 +3044,8 @@
         "conf": "caa4d98949c7e701",
         "device": "34271",
         "name": "Error",
-        "x": 810,
-        "y": 1380,
+        "x": 1210,
+        "y": 1300,
         "wires": []
     },
     {
@@ -3108,7 +3076,7 @@
         "type": "debug",
         "z": "9ffaf4a50f363f22",
         "name": "return code",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3444,52 +3412,6 @@
         "wires": []
     },
     {
-        "id": "2f8a861a65ba49ae",
-        "type": "websocket in",
-        "z": "9a148c9dca835f17",
-        "name": "websocket motion sensor",
-        "server": "",
-        "client": "ef513e599ee752c3",
-        "x": 170,
-        "y": 1420,
-        "wires": [
-            [
-                "60e42f67c7f99220"
-            ]
-        ]
-    },
-    {
-        "id": "4ec18958a59637bd",
-        "type": "google-home-response",
-        "z": "9a148c9dca835f17",
-        "conf": "caa4d98949c7e701",
-        "device": "34231",
-        "name": "motion-sensor",
-        "x": 720,
-        "y": 1420,
-        "wires": []
-    },
-    {
-        "id": "60e42f67c7f99220",
-        "type": "function",
-        "z": "9a148c9dca835f17",
-        "name": "set params for g home",
-        "func": "\nlet motionActive = (msg.payload == \"1\") ? true : false;\n\nmsg.payload = {\n    params:\n        { on: motionActive }\n}\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 1420,
-        "wires": [
-            [
-                "4ec18958a59637bd"
-            ]
-        ]
-    },
-    {
         "id": "b3b1af0423c88dca",
         "type": "comment",
         "z": "9a148c9dca835f17",
@@ -3553,7 +3475,7 @@
         "type": "debug",
         "z": "9a148c9dca835f17",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3597,8 +3519,8 @@
         "z": "9a148c9dca835f17",
         "name": "Refresh WLED status",
         "info": "",
-        "x": 220,
-        "y": 580,
+        "x": 160,
+        "y": 720,
         "wires": []
     },
     {
@@ -3609,8 +3531,8 @@
         "links": [
             "1e64ebb1c957f856"
         ],
-        "x": 135,
-        "y": 640,
+        "x": 75,
+        "y": 780,
         "wires": [
             [
                 "fde24491506b840a",
@@ -3631,8 +3553,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 280,
-        "y": 740,
+        "x": 220,
+        "y": 880,
         "wires": []
     },
     {
@@ -3647,8 +3569,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 660,
+        "x": 410,
+        "y": 800,
         "wires": [
             [
                 "cafd3fca415f4999"
@@ -3662,8 +3584,8 @@
         "conf": "caa4d98949c7e701",
         "device": "32645",
         "name": "wled-desk",
-        "x": 800,
-        "y": 640,
+        "x": 740,
+        "y": 780,
         "wires": []
     },
     {
@@ -3673,8 +3595,8 @@
         "conf": "caa4d98949c7e701",
         "device": "32646",
         "name": "wled-up",
-        "x": 800,
-        "y": 660,
+        "x": 740,
+        "y": 800,
         "wires": []
     },
     {
@@ -3684,8 +3606,8 @@
         "conf": "caa4d98949c7e701",
         "device": "32647",
         "name": "wled-down",
-        "x": 810,
-        "y": 680,
+        "x": 750,
+        "y": 820,
         "wires": []
     },
     {
@@ -3695,8 +3617,8 @@
         "conf": "caa4d98949c7e701",
         "device": "32817",
         "name": "wled-ir",
-        "x": 790,
-        "y": 700,
+        "x": 730,
+        "y": 840,
         "wires": []
     },
     {
@@ -3705,8 +3627,8 @@
         "z": "9a148c9dca835f17",
         "name": "delay because sometimes it would get overwritten by \"auto response\" code, not under my control",
         "info": "",
-        "x": 690,
-        "y": 580,
+        "x": 630,
+        "y": 720,
         "wires": []
     },
     {
@@ -3726,11 +3648,196 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 240,
-        "y": 660,
+        "x": 180,
+        "y": 800,
         "wires": [
             [
                 "19d0b69f93b15902"
+            ]
+        ]
+    },
+    {
+        "id": "2f8a861a65ba49ae",
+        "type": "websocket in",
+        "z": "4ae249d09029b7b6",
+        "name": "websocket motion sensor",
+        "server": "",
+        "client": "ef513e599ee752c3",
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "60e42f67c7f99220",
+                "36139b11ee97a2d2"
+            ]
+        ]
+    },
+    {
+        "id": "4ec18958a59637bd",
+        "type": "google-home-response",
+        "z": "4ae249d09029b7b6",
+        "conf": "caa4d98949c7e701",
+        "device": "34231",
+        "name": "motion-sensor",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "60e42f67c7f99220",
+        "type": "function",
+        "z": "4ae249d09029b7b6",
+        "name": "set params for g home",
+        "func": "\nlet motionActive = (msg.payload == \"1\") ? true : false;\n\nmsg.payload = {\n    params:\n        { on: motionActive }\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nvar lastCheckTime = 0;",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "4ec18958a59637bd"
+            ]
+        ]
+    },
+    {
+        "id": "36139b11ee97a2d2",
+        "type": "function",
+        "z": "4ae249d09029b7b6",
+        "name": "notify",
+        "func": "\nif(msg.payload == \"1\"){\n    // node.error(\"payload=1\");\n    return [msg];\n} else {\n    // node.error(\"payload=0\");\n    return [,msg];\n}\n\n// return msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "5bb3ccf737b370ed",
+                "e8d0e66c6441c135",
+                "5611da7cde1e1f9f"
+            ],
+            [
+                "ae7066bed2f5f471",
+                "e8d0e66c6441c135",
+                "bebb9349b1bec8f0"
+            ]
+        ]
+    },
+    {
+        "id": "5bb3ccf737b370ed",
+        "type": "trigger",
+        "z": "4ae249d09029b7b6",
+        "d": true,
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "5000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 700,
+        "y": 200,
+        "wires": [
+            [
+                "5611da7cde1e1f9f"
+            ]
+        ]
+    },
+    {
+        "id": "e8d0e66c6441c135",
+        "type": "debug",
+        "z": "4ae249d09029b7b6",
+        "name": "2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 690,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "bebb9349b1bec8f0",
+        "type": "wled-notification",
+        "z": "4ae249d09029b7b6",
+        "d": true,
+        "name": "WLED biurko - notify red",
+        "host": "192.168.1.32",
+        "port": "21324",
+        "fps": "30",
+        "ledStart": "0",
+        "ledCount": "64",
+        "effect": "blink",
+        "effectFrequency": "1",
+        "effectCycles": "1",
+        "effectColor": "#ff0000",
+        "x": 1010,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5611da7cde1e1f9f",
+        "type": "wled-notification",
+        "z": "4ae249d09029b7b6",
+        "d": true,
+        "name": "WLED biurko - notify green",
+        "host": "192.168.1.32",
+        "port": "21324",
+        "fps": "30",
+        "ledStart": "0",
+        "ledCount": "64",
+        "effect": "blink",
+        "effectFrequency": "1",
+        "effectCycles": "1",
+        "effectColor": "#00ff00",
+        "x": 1020,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae7066bed2f5f471",
+        "type": "trigger",
+        "z": "4ae249d09029b7b6",
+        "d": true,
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "5000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "bebb9349b1bec8f0"
             ]
         ]
     },
@@ -3789,7 +3896,7 @@
         "type": "debug",
         "z": "ca8d3df2f1a7e9a9",
         "name": "req result",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3877,7 +3984,7 @@
         "type": "debug",
         "z": "ca8d3df2f1a7e9a9",
         "name": "complete msg",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3985,7 +4092,7 @@
         "type": "debug",
         "z": "ca8d3df2f1a7e9a9",
         "name": "token read:",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4450,7 +4557,7 @@
         "type": "debug",
         "z": "8b6530bcd77a42d0",
         "name": "",
-        "active": true,
+        "active": false,
         "console": "false",
         "complete": "true",
         "x": 390,
