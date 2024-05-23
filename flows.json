@@ -389,7 +389,8 @@
             [
                 "f627770d794b52d2",
                 "08fb6c9b87e0ba1a",
-                "0edc8d6dbd0d8751"
+                "0edc8d6dbd0d8751",
+                "77d45ef6a21eaa7a"
             ]
         ]
     },
@@ -3670,8 +3671,8 @@
         "z": "4ae249d09029b7b6",
         "name": "websocket motion sensor",
         "server": "",
-        "client": "e757187c1f28736d",
-        "x": 390,
+        "client": "ef513e599ee752c3",
+        "x": 370,
         "y": 140,
         "wires": [
             [
@@ -3756,8 +3757,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 800,
-        "y": 260,
+        "x": 700,
+        "y": 200,
         "wires": [
             [
                 "5611da7cde1e1f9f"
@@ -3841,8 +3842,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 800,
-        "y": 300,
+        "x": 720,
+        "y": 340,
         "wires": [
             [
                 "bebb9349b1bec8f0"
