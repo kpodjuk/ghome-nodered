@@ -550,15 +550,6 @@
         "subprotocol": ""
     },
     {
-        "id": "e757187c1f28736d",
-        "type": "websocket-client",
-        "path": "ws://192.168.1.72:81",
-        "tls": "",
-        "wholemsg": "false",
-        "hb": "0",
-        "subprotocol": ""
-    },
-    {
         "id": "d395080dbb5f6af2",
         "type": "function",
         "z": "686cdb22219e9c9f",
@@ -921,11 +912,16 @@
                 "t": "eq",
                 "v": "wled-short",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wled-evening",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 5,
+        "outputs": 6,
         "x": 350,
         "y": 360,
         "wires": [
@@ -943,6 +939,9 @@
             ],
             [
                 "c2651d12f8bea324"
+            ],
+            [
+                "0259279d1483dd1e"
             ]
         ]
     },
@@ -2915,24 +2914,6 @@
         ]
     },
     {
-        "id": "92eb1373e49f154d",
-        "type": "google-home",
-        "z": "9ffaf4a50f363f22",
-        "d": true,
-        "conf": "caa4d98949c7e701",
-        "device": "32842",
-        "acknowledge": true,
-        "name": "wled-short",
-        "topic": "",
-        "x": 160,
-        "y": 480,
-        "wires": [
-            [
-                "f6b62a21c7ac773f"
-            ]
-        ]
-    },
-    {
         "id": "3f8aa79d35eb2d70",
         "type": "google-home",
         "z": "9ffaf4a50f363f22",
@@ -3245,6 +3226,50 @@
             [
                 "315f2ed7767b86e3",
                 "dc67b929d4ac7adc"
+            ]
+        ]
+    },
+    {
+        "id": "916d34d79f7a293e",
+        "type": "google-home",
+        "z": "9ffaf4a50f363f22",
+        "conf": "caa4d98949c7e701",
+        "device": "35028",
+        "acknowledge": true,
+        "name": "wled-evening",
+        "topic": "",
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "f6b62a21c7ac773f"
+            ]
+        ]
+    },
+    {
+        "id": "0259279d1483dd1e",
+        "type": "change",
+        "z": "9ffaf4a50f363f22",
+        "name": "wled evening",
+        "rules": [
+            {
+                "t": "set",
+                "p": "requestAddress",
+                "pt": "msg",
+                "to": "192.168.1.109",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "b3c5cda6a292e8b0"
             ]
         ]
     },
